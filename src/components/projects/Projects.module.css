@@ -1,0 +1,33 @@
+.wrapper{
+    background: #242424e1;
+    background-size: cover;
+    padding: 20vh 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 0;
+}
+.wrapper h1{
+    font-size: 5rem;
+    margin: 0;
+}
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+@media(max-width:768px) {
+    .wrapper{
+        padding: 5rem 0;
+    }
+    .wrapper h1{
+        font-size: 3.5rem;
+    }
+    .grid_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

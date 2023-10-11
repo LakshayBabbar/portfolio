@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+/* .active{
+  height: 100vh;
+  width: 100vw;
+  align-items: start;
+  justify-content: start;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+ */

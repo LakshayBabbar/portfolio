@@ -1,0 +1,97 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50rem;
+}
+.wrapper h1{
+    font-size: 5rem;
+    margin: 0 0 2rem;
+}
+.form_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inputs{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.inputs input{
+    padding: 0 1rem;
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 20rem;
+    height: 4rem;
+    background: rgba(165, 152, 152, 0.26);
+    font-size: 1.5rem;
+    color: white;
+}
+.inputs input::placeholder, .form_wrapper textarea::placeholder{
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+.form_wrapper textarea{
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 3px solid white;
+    border-radius: 20px;
+    background: rgba(165, 152, 152, 0.26);
+    height: 15rem;
+    width: 43rem;
+    resize: vertical;
+    font-size: 1.5rem;
+    color: white;
+}
+.btn{
+    margin: 1rem 0 0;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: inset 0 0 0 0;
+    font-weight: 600;
+    background: rgba(165, 152, 152, 0.26);
+    transition: ease 1s;
+}
+
+.btn:hover{
+    transition: ease 1s;
+    box-shadow: inset 10rem 0 0 0 white; 
+    color: black;
+}
+@media(max-width: 768px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 50rem;
+    }
+    .wrapper h1{
+        font-size: 3.5rem;
+    }
+    .form_wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .inputs{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .inputs input{
+        width: 20rem;
+        height: 3rem;
+    }
+
+    .form_wrapper textarea{
+        width: 20rem;
+    }
+}

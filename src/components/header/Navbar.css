@@ -1,0 +1,95 @@
+.wrapper{
+    position: fixed;
+    z-index: 999;  
+}
+.nav{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+.nav_logo h3{
+    font-size: 1.5rem;
+    color: white;
+}
+.nav_list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.nav_link a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+}
+.nav_btn{
+    display: none;
+}
+.nav_btn img{
+    width: 2.5rem;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.icons img{
+    width: 30px;
+}
+
+.nav_btn img[name="close-btn"] {
+    display: none;
+}
+.nav_logo h3, .nav_list, .nav_btn{
+    padding: 0 3rem;
+}
+
+@media (max-width:999px) {
+    .active.nav{
+        height: 100vh;
+        align-items: baseline;
+    }
+    .navbar{
+        width: 60vw;
+        height: 100vh;
+        background-color: black;
+        border-radius: 20px 0 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+        transform: translateX(180%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s linear;
+    }
+    .active .navbar{
+        transform: translateX(70%);
+    }
+    .active .nav_btn img[name="close-btn"]{
+        display: block;
+    }
+    .active .nav_btn img[name="menu-btn"]{
+        display: none;
+    }
+    .nav_btn {
+        display: block;
+        z-index: 999;
+    }
+    .nav_list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .nav_link a{
+        font-size: 2rem;
+        color: rgb(234, 227, 227);
+    }
+}
