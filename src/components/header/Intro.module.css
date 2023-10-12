@@ -11,7 +11,7 @@
 }
 .headline, .headline h1{
     margin: 1rem 0 0;
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 800;
 }
 .headline h1 {
@@ -34,7 +34,7 @@
 .img img{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     width: 35rem;
-    filter: drop-shadow(rgb(0, 0, 0) 0.5rem 0.5rem 20px);
+    filter: drop-shadow(rgb(65, 65, 65) 0.5rem 0.5rem 10px);
     animation: bouncing 4s infinite linear;
 }
 @keyframes bouncing {

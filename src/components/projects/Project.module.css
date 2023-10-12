@@ -2,13 +2,13 @@
 .wrapper{
     width: fit-content;
     height: fit-content;
-    background: rgb(45, 45, 45);
+    background: rgb(32, 32, 32);
     padding: 1rem;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 10px;
-    filter: drop-shadow(0.5rem 0.5rem 0 rgb(14, 13, 13));
+    filter: drop-shadow(0.5rem 0.5rem 10px rgb(14, 13, 13));
     transition: 0.5s;
 }
 

@@ -19,19 +19,14 @@ body {
   font-family: "rubik";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.905) 0%, rgba(64, 64, 64, 0.911) 100.2%);
-  background-color: rgb(52, 8, 85);
+/*   background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.905) 0%, rgba(64, 64, 64, 0.911) 100.2%);
+  background-color: rgb(52, 8, 85); */
+  background: url(./assets/8.jpg);
+  background-size: cover;
   color: var(--primary);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-@media(max-width: 768px) {
-  body{
-    background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.905) 0%, rgba(64, 64, 64, 0.911) 45.2%);
-    background-color: rgb(52, 8, 85);
-  }
 }

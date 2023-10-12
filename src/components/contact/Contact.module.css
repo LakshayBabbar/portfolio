@@ -3,8 +3,6 @@
     align-items: center;
     justify-content: space-around;
     padding: 7rem 0;
-    background: radial-gradient(circle at 10% 150%, rgba(0, 0, 0, 0.906) 0%, rgba(64, 64, 64, 0.906) 200.2%);
-    background-color: rgb(52, 8, 85);
 }
 .contactImg img{
     width: 40rem;

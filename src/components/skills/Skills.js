@@ -38,14 +38,12 @@ const Skills = () => {
     return (
         <Fragment>
             <div className={classes.wrapper} id='skills'>
-                <div className={classes.grid_wrapper}>
                 <h1>Skills</h1>
                     <div className={classes.grid_container}>
                         {data.map((prev,index) => {
                             return <Skill name={prev.Name} progress={prev.progress} key={prev.Name}/>
                         })}
                     </div>
-                </div>
             </div>
         </Fragment>
     );
