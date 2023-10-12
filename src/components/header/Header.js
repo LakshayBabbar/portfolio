@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <Fragment>
-            <div className={classes.wrapper}>
+            <div className={classes.wrapper} id='home'>
                 <Navbar />
                 <Intro />
             </div>

@@ -1,4 +1,4 @@
-import /* classes from  */'./Navbar.css';
+import './Navbar.css';
 import insta from '../../assets/icons/instagram.png';
 import linkedin from '../../assets/icons/linkedin.png';
 import github from '../../assets/icons/github.png';
@@ -25,7 +25,6 @@ const Navbar = () => {
             <a href="https://github.com/LakshayBabbar" target={tar}><img src={github} alt="github"/></a>
         </div>
     );
-
     return (
         <div className='wrapper'>
             <nav className={`nav ${toggle}`}>
@@ -34,10 +33,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar">
                     <ul className="nav_list">
-                        <li className="nav_link"><a href="./index.html" target={tar}>Home</a></li>
-                        <li className="nav_link"><a href="./index.html" target={tar}>About</a></li>
-                        <li className="nav_link"><a href="./index.html" target={tar}>Services</a></li>
-                        <li className="nav_link"><a href="./index.html" target={tar}>Contact</a></li>
+                        <li className="nav_link"><a href="#home">Home</a></li>
+                        <li className="nav_link"><a href="#skills">Skills</a></li>
+                        <li className="nav_link"><a href="#projects">Projects</a></li>
+                        <li className="nav_link"><a href="#contact">Connect</a></li>
                         <li>{icons}</li>
                     </ul>
                 </div>

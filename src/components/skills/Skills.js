@@ -37,7 +37,7 @@ const Skills = () => {
     }];
     return (
         <Fragment>
-            <div className={classes.wrapper}>
+            <div className={classes.wrapper} id='skills'>
                 <div className={classes.grid_wrapper}>
                 <h1>Skills</h1>
                     <div className={classes.grid_container}>

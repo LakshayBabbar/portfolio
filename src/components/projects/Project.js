@@ -1,5 +1,5 @@
 import classes from './Project.module.css';
-import Button from '../UI/Button';
+import github from '../../assets/icons/github.png';
 
 const Project = (props) => {
     const tar= "_blank";
@@ -9,9 +9,12 @@ const Project = (props) => {
                 <img src={props.img} alt={props.title} />
             </div>
             <div className={classes.desc}>
-                <h2>{props.title}</h2>
+                <p>{props.title}</p>
             </div>
-            <a href={props.link} target={tar}><Button name="Check Out!" type="Button" /></a>
+            <div className={classes.link}>
+                <a href={props.link} target={tar}>Visit</a>
+                <a href={props.g_link} target={tar}><img src={github} alt="Github Link"/></a>
+            </div>
         </div>
     );
 };

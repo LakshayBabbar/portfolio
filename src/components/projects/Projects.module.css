@@ -1,5 +1,5 @@
 .wrapper{
-    background: #242424e1;
+    background: #1d1d1de1;
     background-size: cover;
     padding: 20vh 2rem;
     display: flex;
@@ -18,7 +18,7 @@
     gap: 4rem;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 2rem 4rem;
 }
 @media(max-width:768px) {
     .wrapper{
@@ -29,5 +29,6 @@
     }
     .grid_container{
         grid-template-columns: repeat(1,1fr);
+        padding: 2rem;
     }
 }

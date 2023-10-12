@@ -1,5 +1,5 @@
 import './App.css';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import Header from './components/header/Header';
 import Skills from './components/skills/Skills';
 import Projects from './components/projects/Projects';
@@ -9,9 +9,9 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Skills id="skills"/>
+      <Projects id="projects"/>
+      <Contact id="contact"/>
     </Fragment>
   );
 };
