@@ -1,6 +1,6 @@
 .wrapper{
     background: #1d1d1d82;
-    padding: 20vh 2rem;
+    padding: 20vh 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,19 @@
     gap: 4rem;
     align-items: center;
     justify-content: center;
-    padding: 2rem 4rem;
+    padding: 2rem 5rem;
+}
+@media(max-width:1200px) {
+    .wrapper{
+        padding: 5rem 0;
+    }
+    .wrapper h1{
+        font-size: 3.5rem;
+    }
+    .grid_container{
+        grid-template-columns: repeat(2,1fr);
+        padding: 2rem;
+    }
 }
 @media(max-width:768px) {
     .wrapper{

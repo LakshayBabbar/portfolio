@@ -5,13 +5,18 @@
     padding: 7rem 0;
 }
 .contactImg img{
-    width: 40rem;
+    width: 40vw;
 }
-@media(max-width: 768px) {
+@media(max-width: 1200px) {
     .wrapper {
         flex-direction: column-reverse;
         padding: 5rem 0;
     }
+    .contactImg img{
+        width: 60vw;
+    }
+}
+@media(max-width: 768px) {
     .contactImg img{
         width: 80vw;
     }

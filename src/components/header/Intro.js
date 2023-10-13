@@ -29,7 +29,7 @@ const Intro = () => {
                         who is always looking for opportunities to upgrade my skills.
                         Apart from this I am good at Linux.</p>
                 </div>
-                <Button type="button" name="Let's Connect" />
+                <a href='#contact'><Button type="button" name="Let's Connect" /></a>
             </div>
             <div className={classes.into_img}>
                 <div className={classes.img}><img src={profileImage} alt="Profile pic" /></div>

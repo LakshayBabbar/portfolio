@@ -36,8 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.back{
-  background: transparent;
-  backdrop-filter: blur(80px);
-}

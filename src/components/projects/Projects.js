@@ -17,7 +17,7 @@ let projectData = [{
     g_link: "https://github.com/LakshayBabbar/Lakshay-Movies-Studio"
 },
 {
-    title: "ToDo-App",
+    title: "ToDo-List App",
     img: todoApp,
     link: "https://lakshaybabbar.github.io/Todo-App/",
     g_link: "https://github.com/LakshayBabbar/Todo-App"

@@ -69,33 +69,39 @@
     box-shadow: inset 10rem 0 0 0 white; 
     color: black;
 }
-@media(max-width: 768px) {
-    .wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 50rem;
+
+@media(max-width:1300px) {
+    .inputs input{
+        width: 18rem;
+        height: 3rem;
     }
-    .wrapper h1{
-        font-size: 3.5rem;
+    .form_wrapper textarea{
+        width: 39rem;
     }
-    .form_wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+}
+
+@media(max-width: 900px) {
     .inputs{
         grid-template-columns: repeat(1,1fr);
     }
     .inputs input{
-        border-radius: 10px;
-        width: 20rem;
+        width: 60vw;
         height: 3rem;
     }
-
+    .form_wrapper textarea{
+        width: 60vw;
+    }
+}
+@media(max-width: 600px) {
+    .wrapper h1{
+        font-size: 3.5rem;
+    }
+    .inputs input{
+        border-radius: 10px;
+        width: 80vw;
+    }
     .form_wrapper textarea{
         border-radius: 10px;
-        width: 20rem;
+        width: 80vw;
     }
 }
