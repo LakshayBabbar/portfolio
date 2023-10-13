@@ -9,9 +9,9 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Skills id="skills"/>
-      <Projects id="projects"/>
-      <Contact id="contact"/>
+      <Skills id="skills" />
+      <Projects id="projects" />
+      <Contact id="contact" />
     </Fragment>
   );
 };

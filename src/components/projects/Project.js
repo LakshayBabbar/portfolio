@@ -4,7 +4,7 @@ import github from '../../assets/icons/github.png';
 const Project = (props) => {
     const tar= "_blank";
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} data-aos="fade-up">
             <div className={classes.project_img}>
                 <img src={props.img} alt={props.title} />
             </div>

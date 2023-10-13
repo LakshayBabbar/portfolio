@@ -34,7 +34,7 @@ const ContactForm = (props) => {
     return (
         <div className={classes.wrapper}>
             <h1>Get In Touch</h1>
-            <form className={classes.form_wrapper} onSubmit={FormData}>
+            <form className={classes.form_wrapper} onSubmit={FormData} data-aos="fade-up">
                 <div className={classes.inputs}>
                     <input placeholder='Name' type='text' ref={onEnterName} />
                     <input placeholder='Phone No' type='number' ref={onEnterNo} />

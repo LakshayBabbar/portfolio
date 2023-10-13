@@ -6,7 +6,7 @@ import classes from './Intro.module.css';
 const Intro = () => {
 
     return (
-        <div className={classes.wrapper}>
+        <div className={classes.wrapper} data-aos="zoom-out">
             <div className={classes.intro}>
                 <div className={classes.heading}><h3>Welcome to my Portfolio</h3></div>
                 <div className={classes.headline}>
