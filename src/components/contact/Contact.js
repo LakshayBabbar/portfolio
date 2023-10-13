@@ -6,7 +6,7 @@ const Contact = () => {
 
     return (
         <div className={classes.wrapper} id='contact'>
-            <div className={classes.contactImg}><img src={contactImg} alt="Contact"/></div>
+            <div className={classes.contactImg} data-aos="zoom-in"><img src={contactImg} alt="Contact"/></div>
             <ContactForm />
         </div>
     );

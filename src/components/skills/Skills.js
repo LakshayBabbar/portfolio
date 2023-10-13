@@ -48,13 +48,13 @@ const Skills = () => {
             <div className={classes.wrapper} id='skills'>
                 <h1>Top Skills</h1>
                 <div className={classes.top_skills_wrapper}>
-                    {top_skills.map((items, index) => {
-                        return <TopSkills name={items.Name} progress={items.progress} key={index} />
+                    {top_skills.map((items) => {
+                        return <TopSkills name={items.Name} progress={items.progress} key={items.Name} />
                     })}
                 </div>
                 <h1>Skills</h1>
                 <div className={classes.grid_container}>
-                    {data.map((prev, index) => {
+                    {data.map((prev) => {
                         return <Skill name={prev.Name} progress={prev.progress} key={prev.Name} />
                     })}
                 </div>

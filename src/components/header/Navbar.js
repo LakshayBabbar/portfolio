@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className='wrapper'>
             <nav className={`nav ${toggle}`}>
                 <div className="nav_logo">
-                    <h3>Navbar</h3>
+                    <h3>Lakshay</h3>
                 </div>
                 <div className="navbar">
                     <ul className="nav_list">

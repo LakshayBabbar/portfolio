@@ -2,7 +2,7 @@ import classes from './TopSkills.module.css';
 
 const TopSkills = (props) => {
     return (
-            <div className={classes.wrapper}>
+            <div className={classes.wrapper} data-aos="zoom-in">
                 <div className={classes.details}>
                     <h5>{props.name}</h5>
                     <h5>{props.progress}%</h5>
