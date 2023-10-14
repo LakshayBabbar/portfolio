@@ -6,12 +6,24 @@
 }
 .details{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 4rem;
     width: 50vw;
+    padding: 1.2rem 0 0;
 }
-.details h5{
+.details h5, .details span{
+    margin: 1rem 0;
     font-size: 1rem;
+}
+.details span{
+    box-sizing: border-box;
+    background: var(--shadow);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 50%, 51% 100%, 51% 100%, 0 50%, 0 0);
+    height: 2rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
 }
 .outer{
     width: 100%;
@@ -22,10 +34,16 @@
 .inner{
     background: var(--shadow);
     height: 1rem;
+    width: 0;
     border-radius: 50px;
 }
+
 @media(max-width: 1000px){
     .details{
         width: 70vw;
+    }
+    .details span{
+        height: 1.8rem;
+        width: 3rem;
     }
 }

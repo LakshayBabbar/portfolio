@@ -1,0 +1,24 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 40px 40px 0 0;
+    height: 7vw;
+}
+
+.wrapper h1{
+    font-size: 1.5rem;
+}
+.wrapper p{
+    color: rgb(161, 161, 161);
+}
+@media(max-width: 900px) {
+    .wrapper{
+        height: fit-content;
+        flex-direction: column;
+        padding: 1rem;
+    } 
+    .wrapper h1{
+        margin: 0rem;
+    }
+}

@@ -10,7 +10,7 @@
 @media(max-width: 1200px) {
     .wrapper {
         flex-direction: column-reverse;
-        padding: 5rem 0;
+        padding: 5rem 0 0;
     }
     .contactImg img{
         width: 60vw;

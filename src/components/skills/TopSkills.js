@@ -5,7 +5,7 @@ const TopSkills = (props) => {
             <div className={classes.wrapper} data-aos="zoom-in">
                 <div className={classes.details}>
                     <h5>{props.name}</h5>
-                    <h5>{props.progress}%</h5>
+                    <span>{props.progress}%</span>
                 </div>
                 <div className={classes.outer}>
                     <div className={classes.inner} style={{ width: `${props.progress}%` }}></div>

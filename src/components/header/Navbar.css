@@ -2,6 +2,9 @@
     position: fixed;
     z-index: 999;  
 }
+.profile{
+    display: none;
+}
 .nav{
     width: 100vw;
     display: flex;
@@ -9,6 +12,11 @@
     align-items: center;
     background: transparent;
     backdrop-filter: blur(10px);
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
 }
 .nav_logo h3{
     font-size: 1.5rem;
@@ -31,6 +39,7 @@
 }
 .nav_btn img{
     width: 2.5rem;
+    height: 2.5rem;
 }
 
 .icons{
@@ -42,7 +51,6 @@
 .icons img{
     width: 30px;
 }
-
 .nav_btn img[name="close-btn"] {
     display: none;
 }
@@ -51,26 +59,37 @@
 }
 
 @media (max-width:999px) {
-    .active.nav{
-        height: 100vh;
-        align-items: baseline;
-    }
     .navbar{
-        width: 60vw;
+        position: absolute;
+        width: 50vw;
         height: 100vh;
         background-color: rgb(28, 27, 27);
-        border-radius: 20px 0 0;
         top: 0;
         left: 0;
-        position: absolute;
-        transform: translateX(180%);
+        transform: translateX(-180%);
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s linear;
+        padding: 0;
+    }
+    .profile{
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        transition: all 0.5s linear;
+        justify-content: center;
+    }
+    .profile img{
+        width: 100px;
+        border-radius: 100%;
+        border: 1px solid var(--shadow);
     }
     .active .navbar{
-        transform: translateX(70%);
+        transform: translateX(0);
+    }
+    .nav.active{
+        height: 100vh;
+        align-items: baseline;
     }
     .active .nav_btn img[name="close-btn"]{
         display: block;
@@ -80,20 +99,22 @@
     }
     .nav_btn {
         display: block;
-        z-index: 999;
     }
     .nav_list{
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
+        align-items: baseline;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 5vh 0;
     }
     .nav_link a{
-        border-bottom: 1px solid grey; 
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: rgb(234, 227, 227);
     }
     .nav_logo{
         padding: 0;
+    }
+    .socials{
+        padding: 5vh 0;
     }
 }
