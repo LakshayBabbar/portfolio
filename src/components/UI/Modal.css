@@ -1,0 +1,43 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .modal {
+    position: fixed;
+    background-color: var(--shadow);
+    border-radius: 20px;
+    width: 35rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .modal h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .modal p{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media(max-width: 620px) {
+    .modal {
+      width: 80vw;
+      height: 25vh;
+      padding: 1rem;
+    }
+  }

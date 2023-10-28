@@ -10,7 +10,7 @@ const Intro = () => {
             <div className={classes.intro}>
                 <div className={classes.heading}><h3>Welcome to my Portfolio</h3></div>
                 <div className={classes.headline}>
-                    <h1>Hi! I'm Lakshay Babbar,</h1>
+                    <h1>Hi! I&apos;m Lakshay Babbar,</h1>
                     <TypeAnimation
                         sequence={[
                             "Student",

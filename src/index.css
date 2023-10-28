@@ -8,6 +8,12 @@
   --shadow: #6011ff;
 }
 
+#root{
+  padding: 0;
+  max-width: none;
+  text-align: left;
+}
+
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
