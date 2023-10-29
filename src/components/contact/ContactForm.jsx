@@ -28,9 +28,7 @@ const ContactForm = () => {
     setIsModalOpen(true);
   }
 
-  const modalCloseHandler = () => {
-    setIsModalOpen(false);
-  }
+  const modalCloseHandler = () => setIsModalOpen(false);
 
   const FormData = (event) => {
     event.preventDefault();

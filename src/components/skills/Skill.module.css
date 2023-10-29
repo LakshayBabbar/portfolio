@@ -10,13 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.5s;
     filter: drop-shadow(0.2rem 0.2rem 0.1rem #fefefe);
-}
-
-.outer:hover{
-    transition: 0.5s;
-    transform: translateY(-0.5rem);
 }
 
 .inner{

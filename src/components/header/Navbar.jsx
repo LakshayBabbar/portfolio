@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className="wrapper">
             <nav className={`nav ${toggle}`}>
                 <div className="nav_logo">
                     <h3>Lakshay</h3>
