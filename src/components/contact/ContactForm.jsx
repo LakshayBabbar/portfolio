@@ -14,6 +14,7 @@ const ContactForm = () => {
     if (
       onEnterName.current.value.trim() <= 0 ||
       !onEnterEmail.current.value.includes("@") ||
+      !onEnterEmail.current.value.includes(".") ||
       onEnterMssg.current.value.trim() <= 0
     ) {
       return;
