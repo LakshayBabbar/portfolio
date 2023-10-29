@@ -11,21 +11,32 @@ const ContactForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function SendEmail() {
-    window.Email.send({
-            Host: "smtp.elasticemail.com",
-            Username: "lakshaybabbar0118@outlook.com",
-            Password: "F6B7EC0F8962BFCFBB1FD0AD14DCDD95C047",
-            To: 'lakshaybabbar0118@gmail.com',
-            From: "lakshaybabbar0118@outlook.com",
-            Subject: onEnterTitle.current.value,
-            Body: "Name: " + onEnterName.current.value
-                + "<br> Phone Number: " + onEnterNo.current.value
-                + "<br> Email: " + onEnterEmail.current.value
-                + "<br> Message: " + onEnterMssg.current.value
-        }).then(
-            message => console.log(message)
-        );
-    setIsModalOpen(true);
+    if (
+      onEnterName.current.value.trim() <= 0 ||
+      !onEnterEmail.current.value.includes("@") ||
+      onEnterMssg.current.value.trim() <= 0
+    ) {
+      return;
+    } else {
+      window.Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "lakshaybabbar0118@outlook.com",
+        Password: "F6B7EC0F8962BFCFBB1FD0AD14DCDD95C047",
+        To: "lakshaybabbar0118@gmail.com",
+        From: "lakshaybabbar0118@outlook.com",
+        Subject: onEnterTitle.current.value,
+        Body:
+          "Name: " +
+          onEnterName.current.value +
+          "<br> Phone Number: " +
+          onEnterNo.current.value +
+          "<br> Email: " +
+          onEnterEmail.current.value +
+          "<br> Message: " +
+          onEnterMssg.current.value,
+      }).then((message) => console.log(message));
+      setIsModalOpen(true);
+    }
   }
 
   const modalCloseHandler = () => setIsModalOpen(false);
@@ -48,18 +59,18 @@ const ContactForm = () => {
           data-aos="zoom-in"
         >
           <div className={classes.inputs}>
-            <input placeholder="Name" type="text" ref={onEnterName} />
+            <input placeholder="Name" type="text" ref={onEnterName} required/>
             <input placeholder="Phone No" type="number" ref={onEnterNo} />
-            <input placeholder="Email" type="email" ref={onEnterEmail} />
+            <input placeholder="Email" type="email" ref={onEnterEmail} required/>
             <input placeholder="Title" type="text" ref={onEnterTitle} />
           </div>
-          <textarea placeholder="Your Message!" ref={onEnterMssg} />
+          <textarea placeholder="Your Message!" ref={onEnterMssg} required/>
           <button type="submit" className={classes.btn} onClick={SendEmail}>
             Submit
           </button>
         </form>
       </div>
-      {isModalOpen && <Modal modalClose={modalCloseHandler}/>}
+      {isModalOpen && <Modal modalClose={modalCloseHandler} />}
     </>
   );
 };
