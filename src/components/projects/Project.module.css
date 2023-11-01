@@ -1,19 +1,18 @@
 .wrapper{
-    width: fit-content;
-    height: fit-content;
     background: rgb(32, 32, 32);
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     border: 1px solid black;
     border-radius: 10px;
     filter: drop-shadow(0.5rem 0.5rem 10px rgb(14, 13, 13));
-    transition: 0.5s;
 }
 
-.project_img img{
-    border-radius: 10px;
-    width: 25vw;
+.project_ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
 }
 .desc p{
     font-size: 2rem;
@@ -30,18 +29,4 @@
 .link img{
     width: 1.5rem;
     height: 1.5rem;
-}
-.wrapper:hover{
-    transform: translateY(-0.5rem);
-    transition: 0.5s;
-}
-@media(max-width: 1200px) {
-    .project_img img{
-        width: 30vw;
-    }
-}
-@media(max-width: 768px) {
-    .project_img img{
-        width: 70vw;
-    }
 }

@@ -1,6 +1,7 @@
 import classes from "./ContactForm.module.css";
 import { useRef, useState } from "react";
 import Modal from "../UI/Modal";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const onEnterName = useRef();
@@ -50,26 +51,58 @@ const ContactForm = () => {
     onEnterTitle.current.value = "";
     onEnterMssg.current.value = "";
   };
+  const focusInputs = {
+    scale: 1.03,
+    transition: { type: "spring", stiffness: 1000, damping: 15 },
+  };
   return (
     <>
       <div className={classes.wrapper}>
         <h1>Get In Touch</h1>
-        <form
+        <motion.form
           className={classes.form_wrapper}
           onSubmit={FormData}
-          data-aos="zoom-in"
+          initial={{ y: "10vh", opacity: 0}}
+          whileInView={{ opacity: 1, y: 0, transition:{type: "spring", damping: 10, stiffness: 400} }}
         >
           <div className={classes.inputs}>
-            <input placeholder="Name" type="text" ref={onEnterName} required/>
-            <input placeholder="Phone No" type="number" ref={onEnterNo} />
-            <input placeholder="Email" type="email" ref={onEnterEmail} required/>
-            <input placeholder="Title" type="text" ref={onEnterTitle} />
+            <motion.input
+              whileFocus={focusInputs}
+              placeholder="Name"
+              type="text"
+              ref={onEnterName}
+              required
+            />
+            <motion.input
+              whileFocus={focusInputs}
+              placeholder="Phone No"
+              type="number"
+              ref={onEnterNo}
+            />
+            <motion.input
+              whileFocus={focusInputs}
+              placeholder="Email"
+              type="email"
+              ref={onEnterEmail}
+              required
+            />
+            <motion.input
+              whileFocus={focusInputs}
+              placeholder="Title"
+              type="text"
+              ref={onEnterTitle}
+            />
           </div>
-          <textarea placeholder="Your Message!" ref={onEnterMssg} required/>
+          <motion.textarea
+            whileFocus={focusInputs}
+            placeholder="Your Message!"
+            ref={onEnterMssg}
+            required
+          />
           <button type="submit" className={classes.btn} onClick={SendEmail}>
             Submit
           </button>
-        </form>
+        </motion.form>
       </div>
       {isModalOpen && <Modal modalClose={modalCloseHandler} />}
     </>

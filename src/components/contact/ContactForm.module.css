@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
+    gap: 1.5rem;
 }
 .inputs input{
     padding: 0 1rem;

@@ -9,7 +9,3 @@
     height: 30px;
     transition: 0.5s;
 }
-.social img:hover{
-    scale: 1.1;
-    transition: 0.5s;
-}

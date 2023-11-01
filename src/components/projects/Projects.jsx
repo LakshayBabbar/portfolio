@@ -1,24 +1,31 @@
 import Project from './Project';
-import classes from './Projects.module.css'
-import studio from '../../assets/Studio.png';
-import codewor from '../../assets/codewor.png';
-import todoApp from '../../assets/todoApp.png';
+import { CgNotes } from 'react-icons/cg';
+import { BsCameraReels } from 'react-icons/bs';
+import { RiCalendarTodoLine } from 'react-icons/ri';
+import classes from './Projects.module.css';
+
+let style={
+    color: "#6011ff",
+    fontSize: "4rem",
+    filter: "drop-shadow(4px 4px 8px #6011ff)",
+    fontWeight: "lighter"
+}
 
 let projectData = [{
     title: "Notes Website",
-    img: codewor,
+    img: <CgNotes style={style}/>,
     link: "https://lakshaybabbar.github.io/CodeWor/",
     g_link: "https://github.com/LakshayBabbar/CodeWor"
 },
 {
     title: "Studio Website",
-    img: studio,
+    img: <BsCameraReels style={style} />,
     link: "https://lakshaybabbar.github.io/Lakshay-Movies-Studio/",
     g_link: "https://github.com/LakshayBabbar/Lakshay-Movies-Studio"
 },
 {
     title: "ToDo-List App",
-    img: todoApp,
+    img: <RiCalendarTodoLine style={style} />,
     link: "https://lakshaybabbar.github.io/Todo-App/",
     g_link: "https://github.com/LakshayBabbar/Todo-App"
 }];
