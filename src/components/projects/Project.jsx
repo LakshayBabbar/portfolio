@@ -5,7 +5,7 @@ import github from "../../assets/icons/github.png";
 const Project = (props) => {
   const tar = "_blank";
   const variants = {
-    init: { scale: 0, rotate: 60 },
+    init: { scale: 0, rotate: 30 },
     InView: {
       rotate: 0,
       scale: 1,
