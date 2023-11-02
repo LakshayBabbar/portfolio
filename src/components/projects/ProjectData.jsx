@@ -33,7 +33,7 @@ export const CloneData = [
     {
         title: "Instagram",
         img: <BsInstagram style={style} />,
-        link: "",
+        link: "/",
         g_link: ""
     }
 ];
