@@ -19,6 +19,22 @@
     justify-content: center;
     padding: 2rem 5rem;
 }
+.switch_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 3rem 0 0;
+}
+.btnSwitcher {
+    border: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 7rem;
+    font-size: 1.3rem;
+    background: transparent;
+    color: aliceblue;
+}
 @media(max-width:1200px) {
     .wrapper{
         padding: 5rem 0;

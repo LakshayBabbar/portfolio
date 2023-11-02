@@ -4,17 +4,25 @@ import github from "../../assets/icons/github.png";
 
 const Project = (props) => {
   const tar = "_blank";
+  const variants = {
+    init: { scale: 0, rotate: 60 },
+    InView: { rotate: 0, scale: 1 },
+    Hover: { skew: 5, scale: 1.05 },
+    tran: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      staggerChildren: 0.3,
+    },
+  };
   return (
     <motion.div
       className={classes.wrapper}
-      initial={{ scale: 0, rotate: 60}}
-      whileInView={{ rotate: 0, scale: 1 }}
-      whileHover={{skew: 5, scale: 1.05}}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-      }}
+      variants={variants}
+      initial="init"
+      whileInView="InView"
+      whileHover="Hover"
+      transition="tran"
     >
       <div className={classes.project_ico}>{props.img}</div>
       <div className={classes.desc}>
