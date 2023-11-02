@@ -63,7 +63,7 @@ const ContactForm = () => {
           className={classes.form_wrapper}
           onSubmit={FormData}
           initial={{ y: "10vh", opacity: 0}}
-          whileInView={{ opacity: 1, y: 0, transition:{type: "spring", damping: 10, stiffness: 400} }}
+          whileInView={{ opacity: 1, y: 0, transition:{type: "spring", damping: 15, stiffness: 400} }}
         >
           <div className={classes.inputs}>
             <motion.input

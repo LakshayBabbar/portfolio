@@ -27,7 +27,7 @@ const Projects = () => {
 
       <div className={classes.switch_bar}>
         <motion.button
-          whileTap={{ scale: 1.1 }}
+          whileTap={{ scale: 1.2 }}
           transition={{ type: "spring", stiffness: 400 }}
           onClick={() => setActive("all")}
           className={classes.btnSwitcher}
@@ -36,7 +36,7 @@ const Projects = () => {
           All
         </motion.button>
         <motion.button
-          whileTap={{ scale: 1.1 }}
+          whileTap={{ scale: 1.2 }}
           transition={{ type: "spring", stiffness: 400 }}
           onClick={() => setActive("clone")}
           className={classes.btnSwitcher}

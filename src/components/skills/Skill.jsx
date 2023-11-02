@@ -9,7 +9,7 @@ const Skill = ({ progress, name }) => {
     InView: {
       opacity: 1,
       scale: 1,
-      tran: { type: "spring", stiffness: 250, damping: 20 },
+      transition: { type: "spring", stiffness: 250, damping: 20 },
     },
   };
 

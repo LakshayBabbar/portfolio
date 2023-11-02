@@ -11,7 +11,7 @@ const Project = (props) => {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 300,
+        stiffness: 250,
         damping: 20,
       },
     },
