@@ -10,7 +10,10 @@ const Footer = () => {
       whileInView={{
         opacity: 1,
         scale: 1,
-        transition: { type: "spring", stiffness: 100, damping: 18},
+        transition: {
+          duration: 0.2,
+          scale: { type: "spring", stiffness: 100, damping: 18 },
+        },
       }}
     >
       <h1>Lakshay Babbar</h1>

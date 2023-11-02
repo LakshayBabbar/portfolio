@@ -11,7 +11,11 @@ const Contact = () => {
           src={contactImg}
           alt="Contact"
           initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            transition: { scale: { type: "spring", damping: 15 } },
+          }}
         />
       </div>
       <ContactForm />

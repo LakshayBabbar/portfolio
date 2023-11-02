@@ -10,9 +10,8 @@ const Project = (props) => {
       rotate: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 250,
-        damping: 20,
+        duration: 0.3,
+        scale: { type: "spring", stiffness: 250, damping: 20 },
       },
     },
     Hover: { skew: 5, scale: 1.05 },

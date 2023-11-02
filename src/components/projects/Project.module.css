@@ -7,7 +7,6 @@
     border-radius: 10px;
     width: 15rem;
     filter: drop-shadow(0.5rem 0.5rem 10px rgb(14, 13, 13));
-    transition: all 0.08s;
 }
 
 .project_ico {
