@@ -6,14 +6,16 @@ const Project = (props) => {
   const tar = "_blank";
   const variants = {
     init: { scale: 0, rotate: 60 },
-    InView: { rotate: 0, scale: 1 },
-    Hover: { skew: 5, scale: 1.05 },
-    tran: {
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-      staggerChildren: 0.3,
+    InView: {
+      rotate: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      },
     },
+    Hover: { skew: 5, scale: 1.05 },
   };
   return (
     <motion.div
@@ -22,7 +24,6 @@ const Project = (props) => {
       initial="init"
       whileInView="InView"
       whileHover="Hover"
-      transition="tran"
     >
       <div className={classes.project_ico}>{props.img}</div>
       <div className={classes.desc}>
