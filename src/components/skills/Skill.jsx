@@ -5,13 +5,12 @@ const Skill = ({ progress, name }) => {
   const progressBar = ((360 * progress) / 100).toString();
   const bar = `conic-gradient(var(--shadow) ${progressBar}deg, #fefefe 0deg)`;
   const variants = {
-    init: { opacity: 0, scale: 0 },
+    init: {scale: 0 },
     InView: {
-      opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.4,
-        scale: { type: "spring", stiffness: 250, damping: 20 },
+        duration: 0.3,
+        scale: { type: "spring", stiffness: 300, damping: 20 },
       },
     },
   };

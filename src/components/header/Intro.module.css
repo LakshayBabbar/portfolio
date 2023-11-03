@@ -1,14 +1,13 @@
 .wrapper{
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     padding: 7rem 0;
 }
 .intro{
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    max-width: 50vw;
+    max-width: 40rem;
 }
 .headline, .headline h1{
     margin: 1rem 0 0;
@@ -34,7 +33,8 @@
 }
 .img img{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    width: 40vw;
+    width: 35rem;
+    max-width: 40rem;
     filter: drop-shadow(rgb(65, 65, 65) 0.5rem 0.5rem 10px);
     animation: bouncing 4s infinite linear;
 }
@@ -46,9 +46,14 @@
         transform: translateY(0);
     }
 }
+@media (max-width: 1400px){
+    .img img{
+        width: 30rem;
+    }
+}
 @media (max-width: 1200px){
     .wrapper{
-        padding: 5rem 0;
+        padding: 10rem 4rem;
     }
     .headline, .headline h1{
         font-size: 3.5rem;
@@ -78,6 +83,7 @@
 @media (max-width: 888px) {
     .wrapper{
         flex-direction: column;
+        padding: 5rem 0;
     }
     .intro{
         width: 70vw;

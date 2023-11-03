@@ -8,9 +8,8 @@ const TopSkills = (props) => {
   return (
     <motion.div
       className={classes.wrapper}
-      initial={{ opacity: 0, scale: 0 }}
+      initial={{scale: 0 }}
       whileInView={{
-        opacity: 1,
         scale: 1,
         transition: {
           duration: 0.4,
