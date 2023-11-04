@@ -16,18 +16,21 @@ export const projectData = [
     img: todo,
     link: "https://lakshaybabbar.github.io/Todo-App/",
     g_link: "https://github.com/LakshayBabbar/Todo-App",
+    skills: "React Js"
   },
   {
     title: "Studio Website",
     img: studio,
     link: "https://lakshaybabbar.github.io/Lakshay-Movies-Studio/",
     g_link: "https://github.com/LakshayBabbar/Lakshay-Movies-Studio",
+    skills: "HTML, CSS, JS, SmtpJS"
   },
   {
     title: "Notes Website",
     img: notes,
     link: "https://lakshaybabbar.github.io/CodeWor/",
     g_link: "https://github.com/LakshayBabbar/CodeWor",
+    skills: "HTML, CSS, JS, BootStrap"
   },
 ];
 
@@ -37,5 +40,6 @@ export const CloneData = [
     img: instagram,
     link: "/",
     g_link: "",
+    skills: "React Js"
   },
 ];

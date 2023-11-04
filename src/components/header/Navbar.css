@@ -118,4 +118,7 @@
     .socials{
         padding: 10vh 0;
     }
+    .nav_logo h3, .nav_btn{
+        padding: 0 2rem;
+    }
 }

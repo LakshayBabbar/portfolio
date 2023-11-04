@@ -2,7 +2,7 @@ import Project from "./Project";
 import classes from "./Projects.module.css";
 import { useEffect, useState } from "react";
 import { projectData, CloneData } from "./ProjectData";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [active, setActive] = useState("all");
@@ -47,7 +47,6 @@ const Projects = () => {
         </motion.button>
       </div>
       <motion.div className={classes.grid_container}>
-        <AnimatePresence>
           {data.map((items, index) => {
             return (
               <Project
@@ -55,11 +54,11 @@ const Projects = () => {
                 img={items.img}
                 link={items.link}
                 g_link={items.g_link}
+                skills={items.skills}
                 key={index}
               />
             );
           })}
-        </AnimatePresence>
       </motion.div>
     </div>
   );
