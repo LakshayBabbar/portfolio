@@ -6,9 +6,9 @@
     padding: 7rem 0;
 }
 .contactImg img{
-    width: 40rem;
+    max-width: 50rem;
 }
-@media(max-width: 1200px) {
+@media(max-width: 1270px) {
     .wrapper {
         flex-direction: column-reverse;
         gap: 0;

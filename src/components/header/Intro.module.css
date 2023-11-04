@@ -18,11 +18,11 @@
     margin: 0;
 }
 .heading h3{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 1rem 0 0;
     background-color: #6011ff7c;
     border: 1px solid white;
-    padding: 0.6rem;
+    padding: 0.4rem;
     width: fit-content;
 }
 .intro p{

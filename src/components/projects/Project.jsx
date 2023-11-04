@@ -16,26 +16,28 @@ const Project = (props) => {
     Hover: { skew: 5, scale: 1.05 },
   };
   return (
-      <motion.div
-        className={classes.wrapper}
-        variants={variants}
-        initial="init"
-        whileInView="InView"
-        whileHover="Hover"
-      >
-        <div className={classes.project_ico}>{props.img}</div>
-        <div className={classes.desc}>
-          <p>{props.title}</p>
-        </div>
-        <div className={classes.link}>
-          <a href={props.link} target={tar}>
-            Visit
-          </a>
-          <a href={props.g_link} target={tar}>
-            <img src={github} alt="Github Link" />
-          </a>
-        </div>
-      </motion.div>
+    <motion.div
+      className={classes.wrapper}
+      variants={variants}
+      initial="init"
+      whileInView="InView"
+      whileHover="Hover"
+    >
+      <div className={classes.project_img}>
+        <img src={props.img} alt="projects" />
+      </div>
+      <div className={classes.desc}>
+        <p>{props.title}</p>
+      </div>
+      <div className={classes.link}>
+        <a href={props.link} target={tar}>
+          Visit
+        </a>
+        <a href={props.g_link} target={tar}>
+          <img src={github} alt="Github Link" />
+        </a>
+      </div>
+    </motion.div>
   );
 };
 export default Project;

@@ -70,7 +70,7 @@
     color: black;
 }
 
-@media(max-width:1300px) {
+@media(max-width: 1525px) {
     .inputs input{
         width: 18rem;
         height: 3rem;
