@@ -34,7 +34,7 @@
 .img img{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     width: 35rem;
-    max-width: 40rem;
+    height: 35rem;
     filter: drop-shadow(rgb(65, 65, 65) 0.5rem 0.5rem 10px);
     animation: bouncing 4s infinite linear;
 }
@@ -49,6 +49,7 @@
 @media (max-width: 1400px){
     .img img{
         width: 30rem;
+        height: 30rem;
     }
 }
 @media (max-width: 1200px){
@@ -60,9 +61,6 @@
     }
     .heading h3{
         font-size: 1.2rem;
-    }
-    .img img{
-        width: 30rem;
     }
 }
 @media (max-width: 990px){
@@ -78,6 +76,7 @@
     }
     .img img{
         width: 25rem;
+        height: 25rem;
     }
 }
 @media (max-width: 888px) {
@@ -98,6 +97,7 @@
     }
     .img img{
         width: 20rem;
+        height: 20rem;
     }
 }
 @media (max-width: 768px){
