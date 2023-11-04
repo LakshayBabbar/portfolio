@@ -4,23 +4,16 @@ import { motion } from "framer-motion";
 const Skill = ({ progress, name }) => {
   const progressBar = ((360 * progress) / 100).toString();
   const bar = `conic-gradient(var(--shadow) ${progressBar}deg, #fefefe 0deg)`;
-  const variants = {
-    init: {scale: 0 },
-    InView: {
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        scale: { type: "spring", stiffness: 300, damping: 20 },
-      },
-    },
-  };
 
   return (
     <motion.div
       className={classes.wrapper}
-      variants={variants}
-      initial="init"
-      whileInView="InView"
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{
+        scale: [1.2, 1],
+        opacity: 1,
+        transition: { scale: { type: "spring", stiffness: 300, damping: 10, mass: 1 } },
+      }}
     >
       <motion.div
         className={classes.outer}
