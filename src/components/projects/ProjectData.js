@@ -1,7 +1,7 @@
 import todo from '../../assets/todo.jpg';
 import studio from '../../assets/studio.jpg';
 import notes from '../../assets/notes.jpg';
-import instagram from '../../assets/instagram.jpg';
+import amazon from '../../assets/amazon.jpg';
 
 let style = {
   color: "#6011ff",
@@ -36,10 +36,10 @@ export const projectData = [
 
 export const CloneData = [
   {
-    title: "Instagram",
-    img: instagram,
-    link: "/",
-    g_link: "",
+    title: "Amazon",
+    img: amazon,
+    link: "https://lakshaybabbar.github.io/Amazon-Clone/",
+    g_link: "https://github.com/LakshayBabbar/Amazon-Clone/",
     skills: "React Js"
   },
 ];
