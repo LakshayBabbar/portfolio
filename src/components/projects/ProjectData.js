@@ -2,6 +2,7 @@ import todo from '../../assets/todo.jpg';
 import studio from '../../assets/studio.jpg';
 import notes from '../../assets/notes.jpg';
 import amazon from '../../assets/amazon.jpg';
+import codeframer from '../../assets/codeframer.jpg'
 
 let style = {
   color: "#6011ff",
@@ -11,6 +12,13 @@ let style = {
 };
 
 export const projectData = [
+  {
+    title: "Code Editor",
+    img: codeframer,
+    link: "https://code-framer.vercel.app/",
+    g_link: "https://github.com/LakshayBabbar/CodeFramer",
+    skills: "Next Js"
+  },
   {
     title: "ToDo-List App",
     img: todo,
