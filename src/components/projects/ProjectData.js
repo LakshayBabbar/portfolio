@@ -1,8 +1,8 @@
-import todo from '../../assets/todo.jpg';
-import studio from '../../assets/studio.jpg';
-import notes from '../../assets/notes.jpg';
-import amazon from '../../assets/amazon.jpg';
-import codeframer from '../../assets/codeframer.jpg'
+import todo from '../../assets/todo.webp';
+import studio from '../../assets/studio.webp';
+import notes from '../../assets/notes.webp';
+import amazon from '../../assets/amazon.webp';
+import codeframer from '../../assets/codeframer.webp'
 
 let style = {
   color: "#6011ff",
