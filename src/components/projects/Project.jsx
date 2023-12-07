@@ -19,7 +19,7 @@ const Project = (props) => {
         <p>{props.skills}</p>
         <div className={classes.link}>
           <a href={props.link} target={tar}>
-            Visit
+            Live Preview
           </a>
           <a href={props.g_link} target={tar}>
             <img src={github} alt="Github Link" />

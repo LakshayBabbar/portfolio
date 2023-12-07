@@ -47,7 +47,7 @@ const Projects = () => {
         </motion.button>
       </div>
       <motion.div className={classes.grid_container}>
-          {data.map((items, index) => {
+          {data.map((items) => {
             return (
               <Project
                 title={items.title}
@@ -55,7 +55,7 @@ const Projects = () => {
                 link={items.link}
                 g_link={items.g_link}
                 skills={items.skills}
-                key={index}
+                key={Math.random()}
               />
             );
           })}
