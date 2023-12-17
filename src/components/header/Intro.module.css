@@ -7,11 +7,11 @@
 .intro{
     display: flex;
     flex-direction: column;
-    max-width: 40rem;
+    max-width: 50vw;
 }
 .headline, .headline h1{
     margin: 1rem 0 0;
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
 }
 .headline h1 {
@@ -33,8 +33,8 @@
 }
 .img img{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    width: 35rem;
-    height: 35rem;
+    width: 35vw;
+    height: 35vw;
     filter: drop-shadow(rgb(65, 65, 65) 0.5rem 0.5rem 10px);
     animation: bouncing 4s infinite linear;
 }

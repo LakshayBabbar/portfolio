@@ -8,8 +8,8 @@ const Project = (props) => {
     <motion.div
       className={classes.wrapper}
       whileHover={{skew: 4}} 
-      initial={{y: "10rem", opacity: 0}}
-      whileInView={{y: 0, opacity: 1}}
+      initial={{opacity: 0, scale: 0}}
+      whileInView={{scale: 1, opacity: 1}}
     >
       <div className={classes.project_img}>
         <img src={props.img} alt="projects" />
