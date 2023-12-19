@@ -1,108 +1,126 @@
 .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7rem 0;
-}
-.intro{
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    max-width: 50vw;
+    align-items: center;
 }
-.headline, .headline h1{
-    margin: 1rem 0 0;
-    font-size: 4rem;
-    font-weight: 800;
-}
-.headline h1 {
+.wrapper h3{
+    font-size: 2vw;
+    font-family: 'Roboto Serif', sans-serif;
+    font-weight: 500;
     margin: 0;
+    margin-top: 15vh;
 }
-.heading h3{
-    font-size: 1.2rem;
-    margin: 1rem 0 0;
-    background-color: #6011ff7c;
-    border: 1px solid white;
-    padding: 0.4rem;
-    width: fit-content;
-}
-.intro p{
-    margin: 1rem 0 0;
-    font-size: 1.4rem;
+.wrapper h1{
+    margin: 0;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 7px;
+    font-size: 18vw;
+    font-family: 'Koulen', sans-serif;
     font-weight: 600;
-    color: rgb(198, 197, 197);
+    position: relative;
 }
-.img img{
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    width: 35vw;
-    height: 35vw;
-    filter: drop-shadow(rgb(65, 65, 65) 0.5rem 0.5rem 10px);
-    animation: bouncing 4s infinite linear;
+.pic{
+    position: absolute;
+    mix-blend-mode: luminosity;
+    border-radius: 100px;
+    margin-top: 25rem;
+    width: 30vw;
+    filter: drop-shadow(0.5rem 0.5rem 10px black);
 }
-@keyframes bouncing {
-    0%,100%{
-        transform: translateY(-1rem);
+.absoluteDiv, .absoluteDiv2{
+    height: 10vw;
+    width: 10vw;
+    background: var(--shadow);
+    position: absolute;
+    animation: animate 15s infinite ease-in-out;
+    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+}
+
+@keyframes animate {
+    0%, 100%{
+        rotate: 0deg;
     }
     50%{
-        transform: translateY(0);
+        rotate: 180deg;
     }
 }
-@media (max-width: 1400px){
-    .img img{
-        width: 30rem;
-        height: 30rem;
+
+.absoluteDiv{
+    top: 55vh;
+    left: 10rem;
+}
+
+.absoluteDiv2{
+    height: 2.5vw;
+    width: 2.5vw;
+    right: 15vw;
+    top: 20vh;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.absoluteDiv3{
+    height: 10vw;
+    width: 10vw;
+    position: absolute;
+    border-radius: 100px;
+    right: 15vw;
+    bottom: 20vh;
+    background: var(--shadow);
+    box-shadow: 0 0 10px 20px rgb(51, 3, 124);
+    animation: animate2 10s infinite linear;
+}
+@keyframes animate2 {
+    50%{
+      scale: 1.1;
+      border-radius: 30% 70% 67% 33% / 30% 30% 70% 70% ;  
+    }
+    75%{
+        border-radius: 72% 28% 26% 74% / 56% 62% 38% 44% ;
     }
 }
-@media (max-width: 1200px){
+@media (max-width: 1399px) {
+    .wrapper h3{
+        margin-top: 20vh;
+    }
+    .pic{
+        margin-top: 20rem;
+        width: 40vw;
+    }
+}
+@media (max-width: 768px) {
     .wrapper{
-        padding: 10rem 4rem;
+        justify-content: center;
     }
-    .headline, .headline h1{
-        font-size: 3.5rem;
-    }
-    .heading h3{
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 990px){
-    .intro{
-        max-width: none;
-    }
-    .heading h3{
-        font-size: 1.2rem;
-    }
-    .intro p{   
+    .wrapper h3{
+        margin: 0 0 1rem 0;
         font-size: 1rem;
-        margin: 1rem 0 0;
     }
-    .img img{
+    .pic{
+        margin-top: 0;
+        position: relative;
         width: 25rem;
-        height: 25rem;
     }
-}
-@media (max-width: 888px) {
-    .wrapper{
-        flex-direction: column;
-        padding: 5rem 0;
+    .wrapper h1{
+        -webkit-text-stroke-width: 4px;
+        font-size: 20vw;
     }
-    .intro{
-        width: 70vw;
+    .absoluteDiv{
+        left: 2rem;
+        top: 35vh;
+        width: 15vw;
+        height: 15vw;
     }
-    .headline, .headline h1{
-        font-size: 2.5rem;
+    .absoluteDiv2{
+        height: 2rem;
+        width: 2rem;
+        top: 12vh;
+        right: 2rem;
     }
-    .heading h3{
-        margin: 1rem 0 0;
-        padding: 0.2rem;   
-        width: fit-content;
-    }
-    .img img{
-        width: 20rem;
-        height: 20rem;
-    }
-}
-@media (max-width: 768px){
-    .intro{
-        padding: 1rem 0;
-        width: 85vw;
+    .absoluteDiv3{
+        bottom: 5vh;
+        height: 20vw;
+        width: 20vw;
     }
 }
