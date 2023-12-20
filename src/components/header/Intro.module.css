@@ -16,7 +16,7 @@
     margin: 0;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 7px;
-    font-size: 18vw;
+    font-size: 20vw;
     font-family: 'Koulen', sans-serif;
     font-weight: 600;
     position: relative;
@@ -25,7 +25,7 @@
     position: absolute;
     mix-blend-mode: luminosity;
     border-radius: 100px;
-    margin-top: 25rem;
+    top: 40vh;
     width: 30vw;
     filter: drop-shadow(0.5rem 0.5rem 10px black);
 }
@@ -81,26 +81,22 @@
     }
 }
 @media (max-width: 1399px) {
-    .wrapper h3{
-        margin-top: 20vh;
-    }
     .pic{
-        margin-top: 20rem;
-        width: 40vw;
+        width: 35vw;
     }
 }
 @media (max-width: 768px) {
     .wrapper{
-        justify-content: center;
+        height: fit-content;
     }
     .wrapper h3{
-        margin: 0 0 1rem 0;
+        margin-top: 20vh;
         font-size: 1rem;
     }
     .pic{
-        margin-top: 0;
+        top: auto;
+        width: 30rem;
         position: relative;
-        width: 25rem;
     }
     .wrapper h1{
         -webkit-text-stroke-width: 4px;
@@ -108,19 +104,21 @@
     }
     .absoluteDiv{
         left: 2rem;
-        top: 35vh;
+        top: 85vw;
         width: 15vw;
         height: 15vw;
     }
     .absoluteDiv2{
         height: 2rem;
         width: 2rem;
-        top: 12vh;
+        top: 25vw;
         right: 2rem;
     }
     .absoluteDiv3{
-        bottom: 5vh;
-        height: 20vw;
-        width: 20vw;
+        top: auto;
+        bottom: 50vw;
+        right: 2rem;
+        height: 10vw;
+        width: 10vw;
     }
 }

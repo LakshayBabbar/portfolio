@@ -23,7 +23,8 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: "rubik";
+  /* font-family: "rubik"; */
+  font-family: 'Koulen', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 /*   background: radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.905) 0%, rgba(64, 64, 64, 0.911) 100.2%);

@@ -42,6 +42,11 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav_link">
+              <a href="#about" onClick={nav_toggle}>
+                About
+              </a>
+            </li>
+            <li className="nav_link">
               <a href="#skills" onClick={nav_toggle}>
                 Skills
               </a>
