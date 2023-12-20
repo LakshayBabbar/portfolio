@@ -1,5 +1,5 @@
 import classes from "./Project.module.css";
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import github from "../../assets/icons/github.png";
 
 const Project = (props) => {
@@ -10,6 +10,7 @@ const Project = (props) => {
       whileHover={{skew: 4}} 
       initial={{opacity: 0, scale: 0}}
       whileInView={{scale: 1, opacity: 1}}
+      transition={{type: "spring", stiffness: 150, damping: 15}}
     >
       <div className={classes.project_img}>
         <img src={props.img} alt="projects" />

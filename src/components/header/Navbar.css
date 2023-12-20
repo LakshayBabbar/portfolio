@@ -20,6 +20,7 @@
     padding: 0 4rem;
 }
 .nav_logo h3{
+    font-family: cursive;
     font-size: 1.5rem;
     color: white;
 }
@@ -34,6 +35,11 @@
     font-size: 1.2rem;
     color: white;
     font-weight: 600;
+    transition: 0.5s ease-in-out  ;
+}
+.nav_link a:hover{
+    font-size: 1.25rem;
+    color: var(--shadow);
 }
 .nav_btn{
     display: none;

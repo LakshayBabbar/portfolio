@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import pic from "../../assets/pic.png";
+import pic from "../../assets/pic.webp";
 import Socials from "../UI/Socials";
 import menu from "../../assets/icons/menu.png";
 import close from "../../assets/icons/close.png";
@@ -58,7 +58,7 @@ const Navbar = () => {
             </li>
             <li className="nav_link">
               <a href="#contact" onClick={nav_toggle}>
-                Connect
+                Contact
               </a>
             </li>
           </ul>

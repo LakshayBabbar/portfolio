@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     background: rgba(29, 29, 29, 0.353);
+    padding: 5rem 0;
 }
 .wrapper{
     display: flex;
@@ -63,9 +64,10 @@
 @media (max-width: 1100px) {
     .container{
         justify-content: space-around;
+        padding: 0;
     }
     .wrapper {
-        padding: 5rem 0;
+        padding: 10rem 0;
     }
     .wrapper h3{
         font-size: 2rem;
@@ -97,7 +99,7 @@
     }
     .img {
         width: 50vw;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 }
 

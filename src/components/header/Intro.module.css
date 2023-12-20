@@ -25,19 +25,19 @@
     position: absolute;
     mix-blend-mode: luminosity;
     border-radius: 100px;
-    top: 40vh;
-    width: 30vw;
-    filter: drop-shadow(0.5rem 0.5rem 10px black);
+    bottom: 0;
+    width: 35vw;
 }
-.absoluteDiv, .absoluteDiv2{
+.wrapper h3::after, .wrapper h1::before{
+    content: '';
     height: 10vw;
     width: 10vw;
     background: var(--shadow);
     position: absolute;
-    animation: animate 15s infinite ease-in-out;
+    margin: 25vw 0 0 5vw;
+    animation: animate 10s infinite ease-in-out;
     clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
 }
-
 @keyframes animate {
     0%, 100%{
         rotate: 0deg;
@@ -47,29 +47,22 @@
     }
 }
 
-.absoluteDiv{
-    top: 55vh;
-    left: 10rem;
-}
-
-.absoluteDiv2{
+.wrapper h3::after{
     height: 2.5vw;
     width: 2.5vw;
-    right: 15vw;
-    top: 20vh;
+    margin: 0 10vw;
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
-
-.absoluteDiv3{
+.wrapper::after{
+    content: '';
     height: 10vw;
     width: 10vw;
     position: absolute;
     border-radius: 100px;
-    right: 15vw;
-    bottom: 20vh;
+    margin: 40vw 0 0 60vw;
     background: var(--shadow);
     box-shadow: 0 0 10px 20px rgb(51, 3, 124);
-    animation: animate2 10s infinite linear;
+    animation: animate2 6s infinite linear;
 }
 @keyframes animate2 {
     50%{
@@ -81,44 +74,46 @@
     }
 }
 @media (max-width: 1399px) {
-    .pic{
-        width: 35vw;
-    }
-}
-@media (max-width: 768px) {
     .wrapper{
         height: fit-content;
+
+    }
+    .wrapper h1{
+        font-size: 17vw;
+    }
+    .pic{
+        width: 35vw;
+        position: relative;
+        top: auto;
+        bottom: 5rem;
+    }
+}
+@media (max-width: 850px) {
+    .wrapper{
+        padding: 10rem 0;
     }
     .wrapper h3{
-        margin-top: 20vh;
+        margin-top: 0;
         font-size: 1rem;
     }
     .pic{
-        top: auto;
-        width: 30rem;
-        position: relative;
+        width: 25rem;
+        bottom: auto;
     }
     .wrapper h1{
         -webkit-text-stroke-width: 4px;
         font-size: 20vw;
     }
-    .absoluteDiv{
-        left: 2rem;
-        top: 85vw;
-        width: 15vw;
-        height: 15vw;
-    }
-    .absoluteDiv2{
-        height: 2rem;
-        width: 2rem;
-        top: 25vw;
-        right: 2rem;
-    }
-    .absoluteDiv3{
+    .wrapper::after{
         top: auto;
-        bottom: 50vw;
-        right: 2rem;
-        height: 10vw;
-        width: 10vw;
+        margin: 30rem 0 0 60vw;
+    }
+    .wrapper::after, .wrapper h1::before{
+        height: 15vw;
+        width: 15vw;
+    }
+    .wrapper h3::after{
+        height: 5vw;
+        width: 5vw;
     }
 }

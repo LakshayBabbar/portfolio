@@ -100,7 +100,7 @@ const ContactForm = () => {
             required
           />
           <button type="submit" className={classes.btn} onClick={SendEmail}>
-            Submit
+            Send
           </button>
         </motion.form>
       </div>

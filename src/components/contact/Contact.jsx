@@ -1,6 +1,6 @@
 import classes from "./Contact.module.css";
 import ContactForm from "./ContactForm";
-import contactImg from "../../assets/contact.png";
+import contactImg from "../../assets/contact.webp";
 import { motion } from "framer-motion";
 
 const Contact = () => {

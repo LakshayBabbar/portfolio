@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 50rem;
+    padding: 5rem 0;
 }
 .wrapper h1{
     font-size: 5rem;

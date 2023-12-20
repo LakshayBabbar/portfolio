@@ -6,20 +6,17 @@
     padding: 7rem 0;
 }
 .contactImg img{
-    max-width: 50rem;
+    width: 35rem;
+    border-radius: 100%;
+    box-shadow: -22px 20px 34px 0px rgba(0, 0, 0, 0.422);
 }
 @media(max-width: 1270px) {
     .wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 0;
         padding: 5rem 0 0;
     }
     .contactImg img{
-        width: 60vw;
-    }
-}
-@media(max-width: 768px) {
-    .contactImg img{
-        width: 80vw;
+        display: none;
     }
 }
