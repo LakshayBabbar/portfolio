@@ -19,20 +19,20 @@
 }
 
 .wrapper h1 span{
-    color: var(--shadow);
+    color: rgb(145, 66, 230);
 }
 
 .wrapper h3{
     font-size: 2.5rem;
-    color: var(--shadow);
-    font-weight: 800;
+    color: rgb(145, 66, 230);
+    font-weight: 600;
     margin: 0;
 }
 
 .wrapper p{
     width: 40vw;
     font-size: 1.5rem;
-    color: grey;
+    color: rgb(178, 178, 178);
     margin: 1rem 0;
 }
 .wrapper a{
@@ -105,6 +105,6 @@
 
 @media (max-width: 550px) {
     .img{
-        width: 75vw;
+        width: 65vw;
     }
 }
