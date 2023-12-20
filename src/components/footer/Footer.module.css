@@ -12,6 +12,7 @@
 }
 .wrapper p{
     color: rgb(161, 161, 161);
+    text-align: center;
 }
 @media(max-width: 900px) {
     .wrapper{
