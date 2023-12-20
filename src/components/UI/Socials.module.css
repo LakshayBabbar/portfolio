@@ -3,8 +3,12 @@
     align-items: center;
     gap: 1rem;
 }
-.social img{
-    width: 30px;
-    height: 30px;
-    transition: 0.5s;
+.link{
+    font-size: 2rem;
+    text-decoration: none;
+    color: aliceblue;
+    transition: 0.5s ease-in-out;
+}
+.link:hover{
+    color: var(--shadow);
 }

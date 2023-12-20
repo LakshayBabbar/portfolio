@@ -1,6 +1,6 @@
 import classes from "./Project.module.css";
-import { motion, spring } from "framer-motion";
-import github from "../../assets/icons/github.png";
+import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 const Project = (props) => {
   const tar = "_blank";
@@ -23,7 +23,7 @@ const Project = (props) => {
             Live Preview
           </a>
           <a href={props.g_link} target={tar}>
-            <img src={github} alt="Github Link" />
+            {<FaGithub className={classes.ico} />}
           </a>
         </div>
       </div>

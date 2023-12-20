@@ -1,8 +1,7 @@
-import classes from "./Socials.module.css";
-import linkedin from "../../assets/icons/linkedin.png";
-import insta from "../../assets/icons/instagram.png";
-import github from "../../assets/icons/github.png";
-import { motion } from "framer-motion";
+import styles from "./Socials.module.css";
+import { FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Socials = () => {
   const tar = "_blank";
@@ -11,28 +10,19 @@ const Socials = () => {
     transition: { type: "spring", stiffness: 600, damping: 10 },
   };
   return (
-    <div className={classes.social}>
-      <motion.a
-        whileHover={hover}
+    <div className={styles.social}>
+      <a
         href="https://in.linkedin.com/in/lakshay-babbar-5b70a7273"
-        target={tar}
+        target="_blank"
       >
-        <img src={linkedin} alt="Linkedin" />
-      </motion.a>
-      <motion.a
-        whileHover={hover}
-        href="https://www.instagram.com/thelakshaybabbar/"
-        target={tar}
-      >
-        <img src={insta} alt="Instagram" />
-      </motion.a>
-      <motion.a
-        whileHover={hover}
-        href="https://github.com/LakshayBabbar"
-        target={tar}
-      >
-        <img src={github} alt="github" />
-      </motion.a>
+        <FaLinkedin className={styles.link}/>
+      </a>
+      <a href="https://github.com/LakshayBabbar" target="_blank">
+        <FaGithub className={styles.link}/>
+      </a>
+      <a href="https://www.instagram.com/thelakshaybabbar/" target="_blank">
+        <FaInstagram className={styles.link}/>
+      </a>
     </div>
   );
 };

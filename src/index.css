@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "rubik";
-  src: url("./assets/fonts/rubik/static/Rubik-Regular.ttf");
-}
-
 :root {
   --primary: aliceblue;
   --shadow: #6011ff;
