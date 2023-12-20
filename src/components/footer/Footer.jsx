@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={classes.wrapper}>
       <h1>Lakshay Babbar</h1>
-      <p>Copyright &copy; 2023 BCA labs. All rights reserved.</p>
+      <p>Copyright &copy; 2023 Lakshay Babbar. All rights reserved.</p>
       <Socials />
     </div>
   );
