@@ -42,11 +42,11 @@ hr{
   /* Firefox */
   * {
     scrollbar-width: auto;
-    scrollbar-color: #6011ff #ffffff;
+    scrollbar-color: #6011ff;
   }
 
   *::-webkit-scrollbar {
-    width: 20px;
+    width: 12px;
   }
 
   *::-webkit-scrollbar-track {
@@ -55,6 +55,6 @@ hr{
 
   *::-webkit-scrollbar-thumb {
     background-color: #6011ff;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
   }

@@ -11,10 +11,10 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <About id="about" />
-      <Skills id="skills" />
-      <Projects id="projects" />
-      <Contact id="contact" />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
       <hr />
       <Footer />
     </>
