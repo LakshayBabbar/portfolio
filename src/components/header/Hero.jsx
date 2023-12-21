@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Intro.module.css";
+import styles from "./Hero.module.css";
 import pic from "../../assets/pic.webp";
 
 function Intro() {
