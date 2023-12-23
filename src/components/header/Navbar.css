@@ -19,9 +19,16 @@
     align-items: center;
     padding: 0 4rem;
 }
-.nav_logo h3{
+.nav_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 2rem;
+}
+.nav_logo h4{
     font-family: cursive;
-    font-size: 1.5rem;
+    font-size: 25px;
     color: white;
 }
 .nav_list{
@@ -117,13 +124,10 @@
         font-size: 1.5rem;
         color: rgb(234, 227, 227);
     }
-    .nav_logo{
-        padding: 0;
-    }
     .socials{
         padding: 10vh 0;
     }
-    .nav_logo h3, .nav_btn{
+    .nav_logo, .nav_btn{
         padding: 0 2rem;
     }
 }

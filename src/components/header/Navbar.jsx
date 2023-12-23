@@ -5,6 +5,7 @@ import menu from "../../assets/icons/menu.png";
 import close from "../../assets/icons/close.png";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import logo from '/Logo.png';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState("");
@@ -20,7 +21,8 @@ const Navbar = () => {
     <div className="wrapper">
       <nav className={`nav ${toggle}`}>
         <div className="nav_logo">
-          <h3>Lakshay</h3>
+          <img src={logo} alt="Logo" width="25px" />
+          <h4>Lakshay</h4>
         </div>
         <motion.div
           className="navbar"
