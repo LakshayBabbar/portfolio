@@ -25,7 +25,7 @@ export default function About() {
           good at Linux.
         </p>
         <Socials />
-        <a href="https://drive.google.com/file/d/17_taSZW8UtO_uXsYJ9AndCcrQC44O5Pn/view?usp=drivesdk" target="_blank">
+        <a href="https://drive.google.com/file/d/1OqBjz_hYOOd3QHpvI-13Y5FkqdQ4qxjk/view?usp=drivesdk" target="_blank">
           <Button type="button" name="Resume" />
         </a>
       </div>
