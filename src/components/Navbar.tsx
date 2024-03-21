@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import img from "../../public/Logo.png";
@@ -7,55 +6,41 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
-import { IoSunnyOutline } from "react-icons/io5";
-import { BsMoonStars } from "react-icons/bs";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<string>("dark");
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const themeHandler = () => {
-    if (theme === "dark") {
-      localStorage.theme = "light";
-      setTheme("light");
-    } else {
-      localStorage.theme = "dark";
-      setTheme("dark");
-    }
-  };
+  const linkStyle =
+    "cursor-pointer text-gray-300 hover:text-white transition-all delay-100";
   return (
-    <div className="fixed w-full h-14 dark:text-white border-b dark:border-b-0">
+    <div className="fixed w-full h-14 z-50 border-b">
       <nav className="backdrop-blur-md w-full flex items-center justify-around h-full">
         <ul className="flex gap-6 items-center">
-          <li className="flex gap-2 cursor-default font-bold items-center">
+          <li className="flex gap-2 cursor-default font-bold text-white items-center">
             <Image src={img} alt="Logo" className="w-4 h-5" priority />
             <span>Lakshay Babbar</span>
           </li>
-          <li className="cursor-pointer">
+          <li className={linkStyle}>
             <Link href="/">Home</Link>
           </li>
-          <li className="cursor-pointer">
-            <Link href="/About">About</Link>
+          <li className={linkStyle}>
+            <Link href="about">About</Link>
           </li>
-          <li className="cursor-pointer">
-            <Link href="/Projects">Projects</Link>
+          <li className={linkStyle}>
+            <Link href="projects">Projects</Link>
           </li>
-          <li className="cursor-pointer">
-            <Link href="/Contact">Contact</Link>
+          <li className={linkStyle}>
+            <Link
+              href="https://blog-tech-delta.vercel.app/users/lakshaybabbar0118"
+              target="_blank"
+            >
+              Blog
+            </Link>
+          </li>
+          <li className={linkStyle}>
+            <Link href="contact">Contact</Link>
           </li>
         </ul>
         <ul className="text-xl flex gap-4">
-          <li>
+          <li className={linkStyle}>
             <a
               href="https://www.instagram.com/thelakshaybabbar/"
               target="_blank"
@@ -63,12 +48,12 @@ const Navbar = () => {
               <FaInstagram />
             </a>
           </li>
-          <li>
+          <li className={linkStyle}>
             <a href="https://github.com/LakshayBabbar" target="_blank">
               <FaGithub />
             </a>
           </li>
-          <li>
+          <li className={linkStyle}>
             <a
               href="https://in.linkedin.com/in/lakshay-babbar-5b70a7273"
               target="_blank"
@@ -76,13 +61,10 @@ const Navbar = () => {
               <FaLinkedin />
             </a>
           </li>
-          <li>
+          <li className={linkStyle}>
             <a href="https://twitter.com/LakshayBabbar5" target="_blank">
               <FaXTwitter />
             </a>
-          </li>
-          <li onClick={themeHandler} className="cursor-pointer">
-            {theme === "dark" ? <BsMoonStars /> : <IoSunnyOutline />}
           </li>
         </ul>
       </nav>
