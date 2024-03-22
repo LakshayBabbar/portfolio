@@ -5,7 +5,7 @@ import { skillData } from "@/lib/data";
 
 const About = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.2]">
+    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
       <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 mt-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">
@@ -31,7 +31,7 @@ const About = () => {
           </figure>
         </div>
         <div>
-          <h2 className="text-3xl font-bold my-10">What I Know</h2>
+          <h2 className="text-4xl font-bold my-10">What I Know</h2>
           <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
             {skillData.map((item) => {
               return <SkillCard key={item.title} data={item} />;
