@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Lakshay Babbar",
   description: "Portfolio site.",
+  verification: {
+    google: "v6jtGEEF0E0XMHMdaK06gyxXy9mpQfE0-3yuSLik4iw",
+  },
 };
 
 export default function RootLayout({
