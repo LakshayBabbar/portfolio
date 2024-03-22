@@ -45,3 +45,45 @@ export const projectData = [
     id: 4,
   },
 ];
+
+export const skillData = [
+  {
+    title: "FrontEnd",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React Js",
+      "Next Js",
+      "TypeScript",
+      "Tailwind",
+      "ShadCn",
+    ],
+  },
+  {
+    title: "BackEnd",
+    skills: ["Node Js", "Express Js", "Rest API", "Graph QL", "Socket.io"],
+  },
+  {
+    title: "Database",
+    skills: ["MongoDB", "SQL", "Firebase"],
+  },
+  {
+    title: "Programming",
+    skills: ["Java", "C", "C++", "Python"],
+  },
+  {
+    title: "Tools & Libraries",
+    skills: [
+      "Git",
+      "GitHub",
+      "Redux",
+      "React Query",
+      "JWT",
+      "Framer Motion",
+      "Figma",
+      "Linux",
+      "Postman"
+    ],
+  },
+];

@@ -4,7 +4,7 @@ import { SparklesCore } from "@/components/ui/Sparkles";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
-import { projectData } from "@/lib/projectData";
+import { projectData } from "@/lib/data";
 
 export default function Projects() {
   return (
