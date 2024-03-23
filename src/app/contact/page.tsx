@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="h-screen flex items-center justify-evenly">
+    <div className="h-screen flex flex-col sm:flex-row items-center justify-evenly">
       <div className="absolute h-32 w-screen top-0 animate-spotlight bg-neutral-400 blur-[200px] -z-1" />
       <section className="space-y-2">
         <h1 className="text-5xl font-bold my-5">Get In Touch</h1>
