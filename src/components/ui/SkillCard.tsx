@@ -5,7 +5,7 @@ const SkillCard: React.FC<{
   data: { title: string; skills: Array<string> };
 }> = ({ data }) => {
   return (
-      <div className="flex flex-col gap-5 min-w-80 p-4 border rounded-2xl bg-card">
+      <div className="flex flex-col gap-5 min-w-80 p-4 rounded-2xl bg-[rgba(0,0,0,0.3)]">
         <h1 className="text-xl font-bold">{data.title}</h1>
         <div className="flex flex-wrap gap-2">
           {data.skills.map((item) => {

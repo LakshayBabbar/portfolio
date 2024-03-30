@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import img from "../../public/Logo.png";
-import Socials from "./ui/Socials";
+import img from "../../../public/Logo.png";
+import Socials from "./Socials";
 import { RiMenu4Fill } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
         <div>
           <ul
-            className={`absolute sm:relative flex flex-col sm:flex-row gap-6 sm:top-0 sm:right-0 ${active} transition-all`}
+            className={`absolute sm:relative flex flex-col sm:flex-row gap-6 sm:top-0 sm:right-0 rounded-xl ${active} transition-all`}
           >
             <li className={linkStyle}>
               <Link href="/">Home</Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Socials />
+        <Socials hidden={true} />
         <button
           className="text-xl flex sm:hidden z-10"
           onClick={menuHandler}

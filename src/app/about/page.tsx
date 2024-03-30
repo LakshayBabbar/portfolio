@@ -5,7 +5,7 @@ import { skillData } from "@/lib/data";
 
 const About = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
+    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16] mb-20">
       <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 mt-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">

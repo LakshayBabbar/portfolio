@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="h-screen flex flex-col sm:flex-row mt-28 sm:mt-0 items-center justify-evenly">
+    <div className="h-screen flex flex-col sm:flex-row mt-28 sm:mt-0 items-center justify-evenly mb-20">
       <div className="absolute h-32 w-screen top-0 animate-spotlight bg-neutral-400 blur-[200px] -z-1" />
       <section className="space-y-2">
         <h1 className="text-5xl font-bold my-5">Get In Touch</h1>
@@ -20,7 +20,7 @@ const Contact = () => {
           <IoPhonePortraitOutline />
           &nbsp;9953712825
         </p>
-        <Socials />
+        <Socials hidden={false} />
         <Image src={img} alt="contact" className="size-80 " />
       </section>
       <form className="w-96 space-y-4">
@@ -37,7 +37,10 @@ const Contact = () => {
           className="bg-transparent border h-10 rounded-md px-4 outline-none w-full"
           placeholder="Email"
         />
-        <textarea className="h-40 max-h-60 bg-transparent border rounded-md p-4 outline-none w-full" placeholder="Message" />
+        <textarea
+          className="h-40 max-h-60 bg-transparent border rounded-md p-4 outline-none w-full"
+          placeholder="Message"
+        />
         <div className="space-x-4">
           <Button type="reset" variant="secondary">
             Reset
