@@ -1,11 +1,26 @@
+"use client";
 import SkillCard from "@/components/ui/SkillCard";
 import Image from "next/image";
 import img from "../../../public/pic2.jpg";
 import { skillData } from "@/lib/data";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16] mb-20">
+      <motion.div
+        className="absolute top-0 left-0 w-full h-lvh bg-black z-10 origin-left transform"
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0 }}
+        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+      />
+      <motion.div
+        className="absolute top-0 left-0 w-full h-lvh bg-black z-10 origin-top transform"
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+      />
+      ;
       <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 mt-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">

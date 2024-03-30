@@ -3,6 +3,7 @@ import Socials from "./Socials";
 import { Button } from "./button";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Footer = () => {
   return (
@@ -15,7 +16,10 @@ const Footer = () => {
       <div className="flex justify-between w-full items-center">
         <h1 className="text-3xl font-bold">Let&apos;s Work Together</h1>
         <Link href="/contact">
-          <Button className="rounded-full">Contact Now &#8599;</Button>
+          <Button className="rounded-full">
+            Contact Now &nbsp;
+            <GoArrowUpRight />
+          </Button>
         </Link>
       </div>
       <hr className="w-full" />
