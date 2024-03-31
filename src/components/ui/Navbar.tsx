@@ -18,14 +18,14 @@ const Navbar = () => {
     "cursor-pointer text-gray-300 hover:text-white transition-all delay-100";
   return (
     <div className="fixed w-full h-14 z-50 top-0 left-0">
-      <nav className="backdrop-blur-md w-full flex items-center justify-between px-4 sm:px-0 sm:justify-around h-full">
+      <nav className="backdrop-blur-md w-full flex items-center justify-between px-4 md:px-0 md:justify-around h-full">
         <div className="flex gap-2 cursor-default font-bold text-white items-center">
           <Image src={img} alt="Logo" className="w-4 h-5" priority />
           <span>Lakshay Babbar</span>
         </div>
         <div>
           <ul
-            className={`absolute sm:relative flex flex-col sm:flex-row gap-6 sm:top-0 sm:right-0 rounded-xl ${active} transition-all`}
+            className={`absolute md:relative flex flex-col md:flex-row gap-6 md:top-0 md:right-0 rounded-xl ${active} transition-all`}
           >
             <li className={linkStyle}>
               <Link href="/">Home</Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
         <Socials hidden={true} />
         <button
-          className="text-xl flex sm:hidden z-10"
+          className="text-xl flex md:hidden z-10"
           onClick={menuHandler}
           aria-label="Navigation Menu"
           onBlur={menuHandler}

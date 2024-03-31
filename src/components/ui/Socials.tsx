@@ -7,7 +7,7 @@ const Socials: React.FC<{ hidden: boolean }> = ({ hidden }) => {
   const linkStyle =
     "cursor-pointer text-gray-300 hover:text-white transition-all delay-100";
   return (
-    <ul className={`text-xl ${hidden ? "hidden" : "flex"} sm:flex gap-4`}>
+    <ul className={`text-xl ${hidden ? "hidden" : "flex"} md:flex gap-4`}>
       <li className={linkStyle}>
         <a
           href="https://github.com/LakshayBabbar"

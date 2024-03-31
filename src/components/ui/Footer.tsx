@@ -8,7 +8,7 @@ import { GoArrowUpRight } from "react-icons/go";
 const Footer = () => {
   return (
     <motion.section
-      className="flex flex-col items-center gap-5 my-6 px-5 sm:px-20 xl:px-40"
+      className="flex flex-col items-center gap-5 my-6 px-10 sm:px-20 xl:px-40"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200 }}

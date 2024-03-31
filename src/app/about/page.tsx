@@ -4,10 +4,11 @@ import Image from "next/image";
 import img from "../../../public/pic2.jpg";
 import { skillData } from "@/lib/data";
 import { motion } from "framer-motion";
+import GitHubCalendar from "react-github-calendar";
 
 const About = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16] mb-20">
+    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
       <motion.div
         className="absolute top-0 left-0 w-full h-lvh bg-black z-10 origin-left transform"
         initial={{ scaleX: 1 }}
@@ -21,11 +22,11 @@ const About = () => {
         transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
       />
       ;
-      <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 mt-32">
+      <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 my-20 md:my-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">
             <h1 className="text-5xl md:text-7xl font-bold ">About Me</h1>
-            <p className="md:max-w-xl xl:max-w-2xl text-neutral-200">
+            <p className="md:max-w-xl xl:max-w-2xl text-neutral-200 md:pr-4">
               As a 2nd-year student and MERN stack developer, currently pursuing
               a Bachelor&apos;s in Computer Application from SGTBIMIT, I&apos;m
               on a journey to become a proficient full-stack developer. With
@@ -52,6 +53,17 @@ const About = () => {
               return <SkillCard key={item.title} data={item} />;
             })}
           </div>
+        </div>
+        <div className="space-y-10 w-[85vw] md:w-[70vw]">
+          <h2 className="text-4xl font-bold my-10">Days I Code</h2>
+          <GitHubCalendar
+            username="lakshaybabbar"
+            theme={{
+              dark: ["rgb(38, 38, 38)", "rgb(156,163,175)"],
+            }}
+            blockMargin={5}
+            fontSize={16}
+          />
         </div>
       </div>
     </section>

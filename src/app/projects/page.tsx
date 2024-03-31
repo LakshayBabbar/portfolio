@@ -5,29 +5,39 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { projectData } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <div className="h-[fit-content] relative w-full bg-black flex flex-col items-center overflow-hidden rounded-md">
+    <motion.div className="h-[fit-content] relative w-full bg-black flex flex-col items-center overflow-hidden rounded-md"
+    initial={{opacity: 0, x: 50}}
+    whileInView={{opacity: 1, x: 0}}
+    transition={{type: "spring"}}
+    >
       <div className="w-full absolute inset-0">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
-          particleDensity={70}
+          particleDensity={30}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
       </div>
-      <h1 className="mt-28 text-6xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-        Projects
-      </h1>
+      <div className="mt-36 text-center space-y-5">
+        <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+          My Recent Works
+        </h1>
+        <p className="text-neutral-300">
+          Here are a few projects I&apos;ve worked on recently.
+        </p>
+      </div>
       <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-10 my-20">
         {projectData.map((item) => {
           return (
             <CardContainer className="inter-var" key={item.id}>
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-96 xl:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto rounded-xl p-6 border  ">
                 <CardItem
                   translateZ="50"
                   className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -75,6 +85,6 @@ export default function Projects() {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
