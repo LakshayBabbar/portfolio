@@ -1,5 +1,6 @@
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Button } from "@/components/ui/button";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 
 export default function Home() {
@@ -20,8 +21,8 @@ export default function Home() {
           looking for opportunities to upgrade my skills. Apart from this I am
           good at Linux.
         </p>
-        <div className="mt-10 space-x-4">
-          <Button size="lg" asChild>
+        <div className="mt-10 flex gap-4 items-center">
+          <Button asChild className="py-2 px-5">
             <Link
               href="https://drive.google.com/file/d/1OqBjz_hYOOd3QHpvI-13Y5FkqdQ4qxjk/view"
               target="_blank"
@@ -29,9 +30,15 @@ export default function Home() {
               Resume
             </Link>
           </Button>
-          <Button variant="secondary" size="lg" asChild>
-            <Link href="contact">Contact</Link>
-          </Button>
+          <Link href="about">
+            <HoverBorderGradient
+              containerClassName="rounded-md"
+              as="button"
+              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+            >
+              <span className="flex items-center">About Me</span>
+            </HoverBorderGradient>
+          </Link>
         </div>
       </div>
     </div>

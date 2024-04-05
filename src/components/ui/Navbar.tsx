@@ -6,16 +6,22 @@ import Socials from "./Socials";
 import { RiMenu4Fill } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
+import { GrHomeRounded } from "react-icons/gr";
+import { FaRegUser } from "react-icons/fa";
+import { GoProjectSymlink } from "react-icons/go";
+import { GrLocation } from "react-icons/gr";
+import { PiPenNibStraight } from "react-icons/pi";
 
 const Navbar = () => {
   const pre = "-top-96 right-0";
-  const post = "right-10 bg-black top-14 p-10";
+  const post = "right-10 bg-black top-14 p-10 md:p-0 md:bg-transparent";
   const [active, setActive] = useState<string>(pre);
   const menuHandler = () => {
     active === pre ? setActive(post) : setActive(pre);
   };
   const linkStyle =
     "cursor-pointer text-gray-300 hover:text-white transition-all delay-100";
+  const linkSpan = "flex gap-2 items-center";
   return (
     <div className="fixed w-full h-14 z-50 top-0 left-0">
       <nav className="backdrop-blur-md w-full flex items-center justify-between px-4 md:px-0 md:justify-around h-full">
@@ -28,23 +34,46 @@ const Navbar = () => {
             className={`absolute md:relative flex flex-col md:flex-row gap-6 md:top-0 md:right-0 rounded-xl ${active} transition-all`}
           >
             <li className={linkStyle}>
-              <Link href="/">Home</Link>
+              <Link href="/">
+                <span className={linkSpan}>
+                  <GrHomeRounded />
+                  Home
+                </span>
+              </Link>
             </li>
             <li className={linkStyle}>
-              <Link href="about">About</Link>
+              <Link href="about">
+                <span className={linkSpan}>
+                  <FaRegUser />
+                  About
+                </span>
+              </Link>
             </li>
             <li className={linkStyle}>
-              <Link href="projects">Projects</Link>
+              <Link href="projects">
+                <span className={linkSpan}>
+                  <GoProjectSymlink />
+                  Projects
+                </span>
+              </Link>
             </li>
             <li className={linkStyle}>
-              <Link href="contact">Contact</Link>
+              <Link href="contact">
+                <span className={linkSpan}>
+                  <GrLocation />
+                  Contact
+                </span>
+              </Link>
             </li>
             <li className={linkStyle}>
               <Link
                 href="https://blog-tech-delta.vercel.app/users/lakshaybabbar0118"
                 target="_blank"
               >
-                Blog
+                <span className={linkSpan}>
+                  <PiPenNibStraight />
+                  Blog
+                </span>
               </Link>
             </li>
           </ul>

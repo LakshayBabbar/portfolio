@@ -43,7 +43,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     if (container) {
       console.log(container);
       controls.start({
-        opacity: 1,
+        opacity: 0.7,
         transition: {
           duration: 1,
         },
