@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "@/components/ui/Sparkles";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
@@ -9,24 +8,14 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <motion.div className="h-[fit-content] relative w-full bg-black flex flex-col items-center overflow-hidden rounded-md"
-    initial={{opacity: 0, x: 50}}
-    whileInView={{opacity: 1, x: 0}}
-    transition={{type: "spring"}}
+    <motion.div
+      className="h-[fit-content] relative w-full bg-grid-small-white/[0.3] flex flex-col items-center overflow-hidden rounded-md"
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ type: "spring" }}
     >
-      <div className="w-full absolute inset-0">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={10}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-      </div>
-      <div className="mt-36 text-center space-y-5">
-        <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+      <div className="px-5 sm:px-0 mt-28 sm:mt-36 w-auto space-y-5">
+        <h1 className="text-5xl md:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
           My Recent Works
         </h1>
         <p className="text-neutral-300">
