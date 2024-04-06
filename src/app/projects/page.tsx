@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function Projects() {
   return (
     <motion.div
-      className="h-[fit-content] relative w-full bg-grid-white/[0.7] flex flex-col items-center overflow-hidden rounded-md"
+      className="h-[fit-content] relative w-full bg-grid-white/[0.04] flex flex-col items-center overflow-hidden rounded-md"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ type: "spring" }}
