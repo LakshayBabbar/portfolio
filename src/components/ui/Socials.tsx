@@ -19,7 +19,7 @@ const Socials: React.FC<{ hidden: boolean }> = ({ hidden }) => {
       </li>
       <li className={linkStyle}>
         <a
-          href="https://in.linkedin.com/in/lakshay-babbar-5b70a7273"
+          href="https://in.linkedin.com/in/lakshay-babbar"
           target="_blank"
           aria-label="linkedin profile"
         >
