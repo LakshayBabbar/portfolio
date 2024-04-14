@@ -3,7 +3,7 @@ export const projectData = [
     title: "FullStack Blog App",
     skills: "MERN Stack, Tailwind, Cloudinary",
     description: "",
-    img: "/projects/blog-tech.png",
+    img: "/projects/blog.webp",
     link: "https://blog-tech-delta.vercel.app/",
     repo: "https://github.com/LakshayBabbar/Blog-App",
     id: 0,
@@ -83,7 +83,7 @@ export const skillData = [
       "Framer Motion",
       "Figma",
       "Linux",
-      "Postman"
+      "Postman",
     ],
   },
 ];

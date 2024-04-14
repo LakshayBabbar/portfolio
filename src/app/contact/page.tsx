@@ -61,7 +61,7 @@ const Contact = () => {
       <section className="px-5 w-full sm:w-4/5 md:w-[45rem]">
         <div className="absolute bg-neutral-800 blur-[150px] top-10 sm:top-0 size-72 sm:size-96 -z-10" />
         <div className="relative flex flex-col gap-2 items-center mb-10">
-          <h1 className="text-4xl sm:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
             Get In Touch
           </h1>
           <p className="flex items-center">
