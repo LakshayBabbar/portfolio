@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import Project from "@/models/projects";
 import { NextResponse } from "next/server";
 import connectDb from "@/config/db";
