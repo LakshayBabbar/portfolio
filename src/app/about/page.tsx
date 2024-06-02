@@ -1,63 +1,31 @@
-"use client";
 import SkillCard from "@/components/ui/SkillUICard";
 import Image from "next/image";
 import img from "../../../public/pic2.jpg";
-import { motion } from "framer-motion";
 import GitHubCalendar from "react-github-calendar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 interface skill {
+  _id: string;
   domain: string;
   skills: Array<string>;
 }
 
-const About = () => {
-  const [data, setData] = useState([]);
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(true);
+const getData = async () => {
+  const req = await fetch(process.env.BASE_URL + "/api/skills", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+    cache: "no-store",
+  });
+  return req.json();
+};
 
-  useEffect(() => {
-    async function fetchData() {
-      const req = await fetch("/api/skills", {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-        },
-        next: { tags: ["skills"] },
-      });
-      const res = await req.json();
-      console.log(res);
-      if (res.success) {
-        if (res.skills.length > 0) {
-          setData(res.skills);
-        } else {
-          setMessage("No skills found!");
-        }
-      } else {
-        setMessage(res.message);
-      }
-    }
-    fetchData();
-    setLoading(false);
-  }, []);
-
+const About = async () => {
+  const data = await getData();
   return (
     <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
-      <motion.div
-        className="absolute top-0 left-0 w-full h-lvh bg-black z-20 origin-left transform"
-        initial={{ scaleX: 1 }}
-        animate={{ scaleX: 0 }}
-        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-      />
-      <motion.div
-        className="absolute top-0 left-0 w-full h-lvh bg-black z-20 origin-top transform"
-        initial={{ scaleY: 1 }}
-        animate={{ scaleY: 0 }}
-        transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
-      />
-      ;
       <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 my-20 md:my-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">
@@ -95,15 +63,16 @@ const About = () => {
           <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
             What I Know
           </h2>
-          {loading && <p className="my-20 text-center">Loading...</p>}
-          {!loading && data.length > 0 ? (
+          {data.skills ? (
             <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
-              {data.map((item: skill) => {
-                return <SkillCard key={item.domain} data={item} />;
+              {data.skills.map((item: skill) => {
+                return <SkillCard key={item._id} data={item} />;
               })}
             </div>
           ) : (
-            <p className="text-center my-20">{message}</p>
+            <p className="text-center my-20">
+              Could not fetch skills...Please try again
+            </p>
           )}
         </div>
         <div className="space-y-10 w-[85vw] md:w-[70vw]">

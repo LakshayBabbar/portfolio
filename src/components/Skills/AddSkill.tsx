@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { revalidateTag } from "next/cache";
 
 const AddSkill: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
   isOpen,
@@ -53,7 +52,6 @@ const AddSkill: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
           resetForm();
           fetchData();
         }
-        revalidateTag("skills");
       } catch (error: any) {
         console.error("Error:", error.message);
         setMessage("An error occurred. Please try again.");
