@@ -83,7 +83,6 @@ const Navbar = () => {
           className="text-xl flex md:hidden z-10"
           onClick={menuHandler}
           aria-label="Navigation Menu"
-          onBlur={menuHandler}
         >
           {active === pre ? <RiMenu4Fill /> : <IoCloseOutline />}
         </button>

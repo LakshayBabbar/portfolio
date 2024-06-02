@@ -1,14 +1,47 @@
 "use client";
-import SkillCard from "@/components/ui/SkillCard";
+import SkillCard from "@/components/ui/SkillUICard";
 import Image from "next/image";
 import img from "../../../public/pic2.jpg";
-import { skillData } from "@/lib/data";
 import { motion } from "framer-motion";
 import GitHubCalendar from "react-github-calendar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+interface skill {
+  domain: string;
+  skills: Array<string>;
+}
 
 const About = () => {
+  const [data, setData] = useState([]);
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      const req = await fetch("/api/skills", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      const res = await req.json();
+      console.log(res);
+      if (res.success) {
+        if (res.skills.length > 0) {
+          setData(res.skills);
+        } else {
+          setMessage("No skills found!");
+        }
+      } else {
+        setMessage(res.message);
+      }
+    }
+    fetchData();
+    setLoading(false);
+  }, []);
+
   return (
     <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
       <motion.div
@@ -58,15 +91,24 @@ const About = () => {
           </figure>
         </div>
         <div className="my-20">
-          <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">What I Know</h2>
-          <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
-            {skillData.map((item) => {
-              return <SkillCard key={item.title} data={item} />;
-            })}
-          </div>
+          <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+            What I Know
+          </h2>
+          {loading && <p className="my-20 text-center">Loading...</p>}
+          {!loading && data.length > 0 ? (
+            <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
+              {data.map((item: skill) => {
+                return <SkillCard key={item.domain} data={item} />;
+              })}
+            </div>
+          ) : (
+            <p className="text-center my-20">{message}</p>
+          )}
         </div>
         <div className="space-y-10 w-[85vw] md:w-[70vw]">
-          <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">Days I Code</h2>
+          <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+            Days I Code
+          </h2>
           <GitHubCalendar
             username="lakshaybabbar"
             theme={{

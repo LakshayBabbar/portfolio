@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const email = await fetch(`${process.env.NEXT_PUBLIC_CONTACT_API}`, {
+      const email = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify({
           name: data.name,
