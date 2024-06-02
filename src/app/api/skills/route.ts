@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import Skills from "@/models/skills";
 import { NextResponse } from "next/server";
 import connectDb from "@/config/db";
