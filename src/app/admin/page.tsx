@@ -7,6 +7,7 @@ import AddSkill from "@/components/Skills/AddSkill";
 import { useToast } from "@/components/ui/use-toast";
 import ProjectCard from "@/components/projects/ProjectCard";
 import Link from "next/link";
+import AddProject from "@/components/projects/AddProject";
 
 type Skill = {
   _id: string;
@@ -36,6 +37,7 @@ const Admin: React.FC = () => {
   const [data, setData] = useState<Skill[] | Contact[] | Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const [projectModal, setProjectModal] = useState(false);
   const [mode, setMode] = useState<Mode>("skills");
   const { toast } = useToast();
 
@@ -109,7 +111,12 @@ const Admin: React.FC = () => {
     }
   };
 
-  const modalHandler = useCallback(() => setIsOpen((prev) => !prev), []);
+  const modalHandler = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+  const projectModalHandler = useCallback(() => {
+    setProjectModal((prev) => !prev);
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row w-full bg-dot-white/[0.2]">
@@ -183,25 +190,33 @@ const Admin: React.FC = () => {
               </div>
             )}
             {mode === "projects" && (
-              <div className="mb-10 flex justify-center md:justify-normal flex-wrap gap-6">
-                {(data as Project[]).length > 0 ? (
-                  (data as Project[]).map((item) => (
-                    <ProjectCard
-                      key={item._id}
-                      projectData={item}
-                      deleteProject={deleteHandler}
-                      update={updateHandler}
-                    />
-                  ))
-                ) : (
-                  <p>Did not find any projects yet!</p>
-                )}
-              </div>
+              <>
+                <Button variant="outline" onClick={projectModalHandler}>
+                  Add Project
+                </Button>
+                <div className="mb-10 flex justify-center md:justify-normal flex-wrap gap-6">
+                  {(data as Project[]).length > 0 ? (
+                    (data as Project[]).map((item) => (
+                      <ProjectCard
+                        key={item._id}
+                        projectData={item}
+                        deleteProject={deleteHandler}
+                        update={updateHandler}
+                      />
+                    ))
+                  ) : (
+                    <p>Did not find any projects yet!</p>
+                  )}
+                </div>
+              </>
             )}
           </>
         )}
       </div>
       {isOpen && <AddSkill isOpen={modalHandler} fetchData={fetchData} />}
+      {projectModal && (
+        <AddProject isOpen={projectModalHandler} fetchData={fetchData} />
+      )}
     </div>
   );
 };
