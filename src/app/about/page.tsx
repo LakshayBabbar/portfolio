@@ -1,3 +1,4 @@
+export const revalidate = 0
 import SkillCard from "@/components/ui/SkillUICard";
 import Image from "next/image";
 import img from "../../../public/pic2.jpg";
