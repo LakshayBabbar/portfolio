@@ -43,7 +43,7 @@ const Admin: React.FC = () => {
     setLoading(true);
     try {
       const path = mode === "contact" ? "contact/rd" : mode;
-      const req = await fetch("/api/" + path);
+      const req = await fetch("/api/" + path, { next: { tags: [mode] } });
       const res = await req.json();
       switch (mode) {
         case "skills":

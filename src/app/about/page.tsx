@@ -25,6 +25,7 @@ const About = () => {
         headers: {
           "content-type": "application/json",
         },
+        next: { tags: ["skills"] },
       });
       const res = await req.json();
       console.log(res);
