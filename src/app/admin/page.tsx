@@ -39,36 +39,36 @@ const Admin: React.FC = () => {
   const [mode, setMode] = useState<Mode>("skills");
   const { toast } = useToast();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const path = mode === "contact" ? "contact/rd" : mode;
-        const req = await fetch("/api/" + path);
-        const res = await req.json();
-        switch (mode) {
-          case "skills":
-            setData(res.skills || []);
-            break;
-          case "contact":
-            setData(res.contacts || []);
-            break;
-          case "projects":
-            setData(res.projects || []);
-            break;
-          default:
-            setData([]);
-        }
-      } catch (error) {
-        console.error("Failed to fetch data:", error);
-        setData([]);
-      } finally {
-        setLoading(false);
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const path = mode === "contact" ? "contact/rd" : mode;
+      const req = await fetch("/api/" + path);
+      const res = await req.json();
+      switch (mode) {
+        case "skills":
+          setData(res.skills || []);
+          break;
+        case "contact":
+          setData(res.contacts || []);
+          break;
+        case "projects":
+          setData(res.projects || []);
+          break;
+        default:
+          setData([]);
       }
-    };
-
-    fetchData();
+    } catch (error) {
+      console.error("Failed to fetch data:", error);
+      setData([]);
+    } finally {
+      setLoading(false);
+    }
   }, [mode]);
+
+  useEffect(() => {
+    fetchData();
+  }, [mode, fetchData]);
 
   const deleteHandler = async (path: string, id: string) => {
     try {
@@ -201,7 +201,7 @@ const Admin: React.FC = () => {
           </>
         )}
       </div>
-      {isOpen && <AddSkill isOpen={modalHandler} />}
+      {isOpen && <AddSkill isOpen={modalHandler} fetchData={fetchData} />}
     </div>
   );
 };

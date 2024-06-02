@@ -2,7 +2,10 @@ import React, { useState, useCallback } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-const AddSkill: React.FC<{ isOpen: () => void }> = ({ isOpen }) => {
+const AddSkill: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
+  isOpen,
+  fetchData,
+}) => {
   const [message, setMessage] = useState("");
   const [data, setData] = useState({
     domain: "",
@@ -47,13 +50,14 @@ const AddSkill: React.FC<{ isOpen: () => void }> = ({ isOpen }) => {
           setMessage(res.message);
         } else {
           resetForm();
+          fetchData();
         }
       } catch (error: any) {
         console.error("Error:", error.message);
         setMessage("An error occurred. Please try again.");
       }
     },
-    [data, resetForm]
+    [data, resetForm, fetchData]
   );
 
   return (
