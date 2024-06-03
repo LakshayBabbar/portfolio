@@ -98,11 +98,10 @@ const Admin: React.FC = () => {
     setProjectModal((prev) => !prev);
   }, []);
 
-
   return (
     <div className="my-16 flex flex-col md:flex-row w-full bg-dot-white/[0.2]">
-      <div className="relative bg-black">
-        <div className="sticky top-20 mt-10 flex flex-col flex-wrap gap-4 w-80 px-10">
+      <div className="md:relative bg-black">
+        <div className="md:sticky top-0 md:top-20 mt-10 flex md:flex-col justify-center flex-wrap gap-2 md:gap-4 md:w-80 px-2 md:px-10">
           <Button
             variant={mode === "skills" ? "default" : "outline"}
             onClick={() => setMode("skills")}
