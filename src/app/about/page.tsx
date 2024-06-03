@@ -4,12 +4,7 @@ import img from "../../../public/pic2.jpg";
 import GitHubCalendar from "react-github-calendar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
-
-interface skill {
-  _id: string;
-  domain: string;
-  skills: Array<string>;
-}
+import { Skill } from "@/types/types";
 
 const getData = async () => {
   const req = await fetch(process.env.BASE_URL + "/api/skills", {
@@ -65,7 +60,7 @@ const About = async () => {
           </h2>
           {data.skills ? (
             <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
-              {data.skills.map((item: skill) => {
+              {data.skills.map((item: Skill) => {
                 return <SkillCard key={item._id} data={item} />;
               })}
             </div>

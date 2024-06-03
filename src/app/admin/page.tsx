@@ -8,34 +8,12 @@ import { useToast } from "@/components/ui/use-toast";
 import ProjectCard from "@/components/projects/ProjectCard";
 import Link from "next/link";
 import AddProject from "@/components/projects/AddProject";
-
-type Skill = {
-  _id: string;
-  domain: string;
-  skills: Array<string>;
-};
-
-type Project = {
-  _id: string;
-  title: string;
-  skills: string;
-  img: { public_id: string; url: string };
-  link: string;
-  repo: string;
-};
-
-type Contact = {
-  _id: string;
-  name: string;
-  email: string;
-  message: string;
-};
-
-type Mode = "skills" | "contact" | "projects";
+import { Skill, Project, Contact, Mode } from "@/types/types";
 
 const Admin: React.FC = () => {
   const [data, setData] = useState<Skill[] | Contact[] | Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [errorMssg, setErrorMssg] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [projectModal, setProjectModal] = useState(false);
   const [mode, setMode] = useState<Mode>("skills");
@@ -43,10 +21,12 @@ const Admin: React.FC = () => {
 
   const fetchData = useCallback(async () => {
     setLoading(true);
+    setErrorMssg("");
     try {
       const path = mode === "contact" ? "contact/rd" : mode;
-      const req = await fetch("/api/" + path, { cache: "no-store" });
+      const req = await fetch("/api/" + path);
       const res = await req.json();
+      !req.ok && setErrorMssg(res.message);
       switch (mode) {
         case "skills":
           setData(res.skills || []);
@@ -118,10 +98,11 @@ const Admin: React.FC = () => {
     setProjectModal((prev) => !prev);
   }, []);
 
+
   return (
-    <div className="flex flex-col md:flex-row w-full bg-dot-white/[0.2]">
-      <div className="my-14 md:my-0 md:h-screen md:w-96 flex items-center justify-center">
-        <div className="flex md:flex-col gap-4 md:border md:p-10 rounded-xl bg-black">
+    <div className="my-16 flex flex-col md:flex-row w-full bg-dot-white/[0.2]">
+      <div className="relative bg-black">
+        <div className="sticky top-20 mt-10 flex flex-col flex-wrap gap-4 w-80 px-10">
           <Button
             variant={mode === "skills" ? "default" : "outline"}
             onClick={() => setMode("skills")}
@@ -145,13 +126,13 @@ const Admin: React.FC = () => {
           </Button>
         </div>
       </div>
-      <div className="md:mt-24 px-10 flex flex-col gap-10 w-full h-[fit-content]">
+      <div className="flex flex-col items-center justify-between md:gap-10 md:px-10 w-full h-[fit-content]">
         {loading ? (
-          <p>Loading...</p>
+          <p className="my-20">Loading...</p>
         ) : (
           <>
             {mode === "skills" && (
-              <>
+              <div className="my-10 w-11/12 space-y-10">
                 {(data as Skill[]).length > 0 ? (
                   (data as Skill[]).map((item) => (
                     <SkillCard
@@ -162,7 +143,7 @@ const Admin: React.FC = () => {
                     />
                   ))
                 ) : (
-                  <p>No skills found!</p>
+                  <p>{errorMssg}</p>
                 )}
                 <Button
                   variant="outline"
@@ -172,10 +153,10 @@ const Admin: React.FC = () => {
                 >
                   + Add New
                 </Button>
-              </>
+              </div>
             )}
             {mode === "contact" && (
-              <div className="flex justify-center md:justify-normal flex-wrap gap-6">
+              <div className="my-10 flex w-11/12 justify-center sm:justify-start flex-wrap gap-6">
                 {(data as Contact[]).length > 0 ? (
                   (data as Contact[]).map((item) => (
                     <ContactCard
@@ -185,16 +166,16 @@ const Admin: React.FC = () => {
                     />
                   ))
                 ) : (
-                  <p>Did not find any contacts yet!</p>
+                  <p>{errorMssg}</p>
                 )}
               </div>
             )}
             {mode === "projects" && (
-              <>
-                <Button variant="outline" onClick={projectModalHandler}>
-                  Add Project
+              <div className="my-10 space-y-4">
+                <Button size="lg" onClick={projectModalHandler}>
+                  New Project
                 </Button>
-                <div className="mb-10 flex justify-center md:justify-normal flex-wrap gap-6">
+                <div className="flex justify-center md:justify-normal flex-wrap gap-6">
                   {(data as Project[]).length > 0 ? (
                     (data as Project[]).map((item) => (
                       <ProjectCard
@@ -205,10 +186,10 @@ const Admin: React.FC = () => {
                       />
                     ))
                   ) : (
-                    <p>Did not find any projects yet!</p>
+                    <p>{errorMssg}</p>
                   )}
                 </div>
-              </>
+              </div>
             )}
           </>
         )}

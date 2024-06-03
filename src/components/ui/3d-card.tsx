@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import React, {
   createContext,
   useState,
@@ -46,10 +46,7 @@ export const CardContainer = ({
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "flex items-center justify-center",
-          containerClassName
-        )}
+        className={cn("flex items-center justify-center", containerClassName)}
         style={{
           perspective: "1000px",
         }}

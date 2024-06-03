@@ -74,7 +74,7 @@ const AddProject: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
           <Input
             type="text"
             name="title"
-            placeholder="Ttile"
+            placeholder="Title"
             value={data.title}
             onChange={valueHandler}
             required
@@ -117,7 +117,6 @@ const AddProject: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
             className="hidden"
             id="input-file"
             accept="image/*"
-            required
           />
           {message && <p className="text-red-500">{message}</p>}
           <div className="flex w-full justify-end gap-4">

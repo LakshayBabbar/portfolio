@@ -2,22 +2,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-
-interface ProjectItems {
-  _id: string;
-  title: string;
-  skills: string;
-  img: { public_id: string; url: string };
-  link: string;
-  repo: string;
-}
+import { Project } from "@/types/types";
 
 const ProjectCard: React.FC<{
-  projectData: ProjectItems;
+  projectData: Project;
   deleteProject: (path: string, id: string) => void;
-  update: (path: string, body: ProjectItems) => void;
+  update: (path: string, body: Project) => void;
 }> = ({ projectData, deleteProject, update }) => {
-  const [data, setData] = useState<ProjectItems>(projectData);
+  const [data, setData] = useState<Project>(projectData);
   const dataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setData((prev) => {
@@ -25,7 +17,7 @@ const ProjectCard: React.FC<{
     });
   };
   return (
-    <div className="w-11/12 md:w-[30rem] space-y-2 p-10 border rounded-xl bg-black">
+    <div className="w-11/12 md:w-96 space-y-2 p-8 border rounded-xl bg-black">
       <Input
         type="text"
         name="title"
@@ -46,7 +38,7 @@ const ProjectCard: React.FC<{
           alt={data.title}
           width={250}
           height={200}
-          className="w-full h-auto"
+          className="w-full h-auto aspect-video object-cover"
         />
       )}
       <Input
@@ -65,9 +57,12 @@ const ProjectCard: React.FC<{
         onChange={dataHandler}
       />
       <div className="space-x-4">
-        <Button onClick={() => update("projects/cud", data)}>Update</Button>
+        <Button onClick={() => update("projects/cud", data)} size="sm">
+          Update
+        </Button>
         <Button
           variant="destructive"
+          size="sm"
           onClick={() => deleteProject("projects/cud", data._id)}
         >
           Delete

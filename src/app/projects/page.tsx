@@ -4,18 +4,7 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-interface projectData {
-  _id: string;
-  title: string;
-  skills: string;
-  img: {
-    public_id: string;
-    url: string;
-  };
-  link: string;
-  repo: string;
-}
+import { Project } from "@/types/types";
 
 export default function Projects() {
   const [data, setData] = useState([]);
@@ -45,7 +34,7 @@ export default function Projects() {
   }, []);
   return (
     <motion.div
-      className="h-[fit-content] relative w-full bg-grid-white/[0.04] flex flex-col items-center overflow-hidden rounded-md"
+      className="h-[fit-content] relative w-full bg-grid-white/[0.07] flex flex-col items-center overflow-hidden rounded-md"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ type: "spring" }}
@@ -61,7 +50,7 @@ export default function Projects() {
       {loading && <p className="text-canter my-20">Loading...</p>}
       {!loading && data.length > 0 ? (
         <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-10 my-20">
-          {data.map((item: projectData) => {
+          {data.map((item: Project) => {
             return (
               <CardContainer className="inter-var" key={item._id}>
                 <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto rounded-xl p-6 border  ">
