@@ -33,7 +33,7 @@ const Navbar = () => {
           <ul
             className={`absolute md:relative flex flex-col md:flex-row gap-6 md:top-0 md:right-0 rounded-xl ${active} transition-all`}
           >
-            <li className={linkStyle}>
+            <li className={linkStyle} onClick={setActive(pre)}>
               <Link href="/">
                 <span className={linkSpan}>
                   <GrHomeRounded />
@@ -41,7 +41,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li className={linkStyle}>
+            <li className={linkStyle} onClick={setActive(pre)}>
               <Link href="about">
                 <span className={linkSpan}>
                   <FaRegUser />
@@ -49,7 +49,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li className={linkStyle}>
+            <li className={linkStyle} onClick={setActive(pre)}>
               <Link href="projects">
                 <span className={linkSpan}>
                   <GoProjectSymlink />
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </span>
               </Link>
             </li>
-            <li className={linkStyle}>
+            <li className={linkStyle} onClick={setActive(pre)}>
               <Link href="contact">
                 <span className={linkSpan}>
                   <GrLocation />
