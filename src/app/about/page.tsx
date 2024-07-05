@@ -12,7 +12,6 @@ const getData = async () => {
     headers: {
       "content-type": "application/json",
     },
-    cache: "no-store",
   });
   return req.json();
 };

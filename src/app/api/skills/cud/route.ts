@@ -1,6 +1,7 @@
 import Skills from "@/models/skills";
 import { NextRequest, NextResponse } from "next/server";
 import connectDb from "@/config/db";
+import { revalidatePath } from "next/cache";
 connectDb();
 
 export async function POST(req: NextRequest) {
@@ -12,6 +13,7 @@ export async function POST(req: NextRequest) {
       skills,
     });
     await newSkill.save();
+    revalidatePath("/about");
     return NextResponse.json(
       {
         message: "Skill added successfully",
@@ -46,6 +48,7 @@ export async function PUT(req: NextRequest) {
     const reqBody = await req.json();
     const { _id, domain, skills } = await reqBody;
     await Skills.findOneAndUpdate({ _id }, { domain, skills });
+    revalidatePath("/about");
     return NextResponse.json(
       {
         message: "Skill Updated successfully",
@@ -68,6 +71,7 @@ export async function DELETE(req: NextRequest) {
     const reqBody = await req.json();
     const { id } = await reqBody;
     await Skills.deleteOne({ _id: id });
+    revalidatePath("/about");
     return NextResponse.json(
       {
         message: "Skill deleted successfully",

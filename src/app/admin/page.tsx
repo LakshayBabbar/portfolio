@@ -171,9 +171,16 @@ const Admin: React.FC = () => {
             )}
             {mode === "projects" && (
               <div className="my-10 space-y-4">
-                <Button size="lg" onClick={projectModalHandler}>
-                  New Project
-                </Button>
+                <div className="w-full md:w-[fit-content] flex justify-center md:justify-normal">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-11/12"
+                    onClick={projectModalHandler}
+                  >
+                    New Project
+                  </Button>
+                </div>
                 <div className="flex justify-center md:justify-normal flex-wrap gap-6">
                   {(data as Project[]).length > 0 ? (
                     (data as Project[]).map((item) => (
