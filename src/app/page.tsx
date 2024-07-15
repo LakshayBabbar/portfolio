@@ -24,7 +24,7 @@ export default function Home() {
         <div className="mt-10 flex gap-4 items-center">
           <Button asChild className="py-2 px-5">
             <Link
-              href="https://drive.google.com/file/d/1f-QOlbyQnt2MEjUC5Xf8qiEbuQSs2oQ0/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1-HwkSzC-VrQtCMD3qpLF8i7HJ4OCXpNd/view?usp=drivesdk"
               target="_blank"
             >
               Resume
