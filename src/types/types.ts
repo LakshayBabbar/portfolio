@@ -20,10 +20,9 @@ type Contact = {
   message: string;
 };
 
-type Mode = "skills" | "contact" | "projects";
 type ErrorRes = {
   message: string;
   success: boolean;
 };
 
-export type { Skill, Project, Contact, Mode, ErrorRes };
+export type { Skill, Project, Contact, ErrorRes };

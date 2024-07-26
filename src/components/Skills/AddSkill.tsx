@@ -2,10 +2,10 @@ import React, { useState, useCallback } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-const AddSkill: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
-  isOpen,
-  fetchData,
-}) => {
+const AddSkill: React.FC<{
+  isOpen: () => void;
+  fetchData: (url: string, method: string) => void;
+}> = ({ isOpen, fetchData }) => {
   const [message, setMessage] = useState("");
   const [data, setData] = useState({
     domain: "",
@@ -50,7 +50,7 @@ const AddSkill: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
           setMessage(res.message);
         } else {
           resetForm();
-          fetchData();
+          fetchData("/api/skills", "GET");
         }
       } catch (error: any) {
         console.error("Error:", error.message);

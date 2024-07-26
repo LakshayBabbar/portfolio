@@ -1,15 +1,11 @@
 import React from "react";
 import { Button } from "./button";
+import type { Contact } from "@/types/types";
 
 const ContactCard: React.FC<{
-  data: {
-    _id: string;
-    name: string;
-    email: string;
-    message: string;
-  };
-  deleteContact: (type: string, id: string) => void;
-}> = ({ data, deleteContact }) => {
+  data: Contact;
+  deleteHandler: (id: string) => void;
+}> = ({ data, deleteHandler }) => {
   return (
     <div className="w-11/12 md:w-[25rem] border p-10 rounded-xl space-y-2 bg-black">
       <p>
@@ -24,7 +20,7 @@ const ContactCard: React.FC<{
       <Button
         variant="destructive"
         size="sm"
-        onClick={() => deleteContact("contact/rd", data._id)}
+        onClick={() => deleteHandler(data._id.toString())}
       >
         Delete
       </Button>

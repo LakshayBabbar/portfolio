@@ -47,7 +47,16 @@ export async function PUT(req: NextRequest) {
   try {
     const reqBody = await req.json();
     const { _id, domain, skills } = await reqBody;
-    await Skills.findOneAndUpdate({ _id }, { domain, skills });
+    const skill = await Skills.findOneAndUpdate({ _id }, { domain, skills });
+    if (!skill) {
+      return NextResponse.json(
+        {
+          message: "Skill not found",
+          success: false,
+        },
+        { status: 404 }
+      );
+    }
     revalidatePath("/about");
     return NextResponse.json(
       {

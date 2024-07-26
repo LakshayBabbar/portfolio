@@ -5,14 +5,10 @@ import { Skill } from "@/types/types";
 
 interface SkillCardProps {
   data: Skill;
-  deleteSkill: (path: string, id: string) => void;
-  update: (
-    path: string,
-    data: { _id: string; domain: string; skills: Array<string> }
-  ) => void;
+  skillhandler: (type: string, id: string, body: {}) => void;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ data, deleteSkill, update }) => {
+const SkillCard: React.FC<SkillCardProps> = ({ data, skillhandler }) => {
   const convert = data.skills ? data.skills.toString() : "";
   const [skills, setSkills] = useState<string>(convert);
   const [domain, setDomain] = useState<string>(data.domain);
@@ -34,18 +30,14 @@ const SkillCard: React.FC<SkillCardProps> = ({ data, deleteSkill, update }) => {
       <div className="flex gap-4">
         <Button
           onClick={() =>
-            update("skills/cud", {
-              _id: data._id,
-              domain,
-              skills: skills.split(","),
-            })
+            skillhandler("UPDATE", data._id, { _id: data._id, skills, domain })
           }
         >
           Update
         </Button>
         <Button
           variant="destructive"
-          onClick={() => deleteSkill("skills/cud", data._id)}
+          onClick={() => skillhandler("DELETE", data._id.toString(), {})}
         >
           Delete
         </Button>

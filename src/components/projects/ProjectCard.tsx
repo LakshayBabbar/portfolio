@@ -6,10 +6,10 @@ import { Project } from "@/types/types";
 
 const ProjectCard: React.FC<{
   projectData: Project;
-  deleteProject: (path: string, id: string) => void;
-  update: (path: string, body: Project) => void;
-}> = ({ projectData, deleteProject, update }) => {
+  handler: (type: string, id: string, body: {}) => void;
+}> = ({ projectData, handler }) => {
   const [data, setData] = useState<Project>(projectData);
+  
   const dataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setData((prev) => {
@@ -57,13 +57,13 @@ const ProjectCard: React.FC<{
         onChange={dataHandler}
       />
       <div className="space-x-4">
-        <Button onClick={() => update("projects/cud", data)} size="sm">
+        <Button size="sm" onClick={() => handler("UPDATE", data._id, data)}>
           Update
         </Button>
         <Button
           variant="destructive"
           size="sm"
-          onClick={() => deleteProject("projects/cud", data._id)}
+          onClick={() => handler("DELETE", data._id.toString(), {})}
         >
           Delete
         </Button>

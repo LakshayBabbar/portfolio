@@ -2,10 +2,10 @@ import React, { useState, useCallback } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-const AddProject: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
-  isOpen,
-  fetchData,
-}) => {
+const AddProject: React.FC<{
+  isOpen: () => void;
+  fetchData: (url: string, method: string) => void;
+}> = ({ isOpen, fetchData }) => {
   const [message, setMessage] = useState("");
   const [img, setImg] = useState<File | null>(null);
   const [data, setData] = useState({
@@ -56,7 +56,7 @@ const AddProject: React.FC<{ isOpen: () => void; fetchData: () => void }> = ({
           setMessage(res.message);
         } else {
           resetForm();
-          fetchData();
+          fetchData("/api/projects", "GET");
         }
       } catch (error: any) {
         console.error("Error:", error);
