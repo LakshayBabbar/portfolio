@@ -9,7 +9,7 @@ export default function AdminRoot({
   return (
     <>
       <SideBar />
-      <main className="ml-56 my-32">{children}</main>
+      <main className="sm:ml-56 my-32">{children}</main>
     </>
   );
 }

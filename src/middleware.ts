@@ -23,7 +23,7 @@ export async function middleware(request: NextRequest) {
       );
     }
     if (request.nextUrl.pathname.startsWith("/admin")) {
-      return NextResponse.redirect(new URL("/", request.url));
+      return NextResponse.redirect(new URL("/login", request.url));
     }
   }
   if (request.nextUrl.pathname.startsWith("/login") && !error) {

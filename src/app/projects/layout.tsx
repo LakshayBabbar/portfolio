@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Projects | Lakshay Babbar",
@@ -8,7 +9,12 @@ export const metadata: Metadata = {
 };
 
 const layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
 };
 
 export default layout;

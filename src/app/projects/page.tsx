@@ -5,33 +5,25 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "@/types/types";
+import useFetch from "@/hooks/useFetch";
 
 export default function Projects() {
-  const [data, setData] = useState([]);
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(true);
+  const { data, fetchData, loading, error } = useFetch<{
+    projects: Project[];
+  }>();
+
   useEffect(() => {
-    async function fetchData() {
-      const req = await fetch("/api/projects", {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-        },
-      });
-      const res = await req.json();
-      if (res.success) {
-        if (res.projects.length > 0) {
-          setData(res.projects);
-        } else {
-          setMessage("No project found!");
-        }
-      } else {
-        setMessage(res.message);
-      }
-    }
-    fetchData();
-    setLoading(false);
-  }, []);
+    fetchData("/api/projects", "GET");
+  }, [fetchData]);
+
+  if (loading)
+    return (
+      <p className="mt-32 flex items-center justify-center">
+        <div className="size-16 rounded-full border-t-4 border-blue-500 animate-spin" />
+      </p>
+    );
+  if (error) return <p className="mt-32 text-center">Error: {error}</p>;
+
   return (
     <motion.div
       className="h-[fit-content] relative w-full bg-grid-white/[0.07] flex flex-col items-center overflow-hidden rounded-md"
@@ -47,64 +39,59 @@ export default function Projects() {
           Here are a few projects I&apos;ve worked on recently.
         </p>
       </div>
-      {loading && <p className="text-canter my-20">Loading...</p>}
-      {!loading && data.length > 0 ? (
-        <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-10 my-20">
-          {data.map((item: Project) => {
-            return (
-              <CardContainer className="inter-var" key={item._id}>
-                <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto rounded-xl p-6 border  ">
+      <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-10 my-20">
+        {data?.projects?.map((item: Project) => {
+          return (
+            <CardContainer className="inter-var" key={item._id}>
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-neutral-600 dark:text-white"
+                >
+                  {item.title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                >
+                  Tech Stack:&nbsp;{item.skills}
+                </CardItem>
+                <CardItem translateZ="100" className="w-full mt-4">
+                  <Image
+                    src={item.img.url}
+                    height="1000"
+                    width="1000"
+                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    alt="thumbnail"
+                    priority
+                  />
+                </CardItem>
+                <div className="flex justify-between items-center mt-5">
                   <CardItem
-                    translateZ="50"
-                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                    translateZ={20}
+                    as={Link}
+                    href={item.link}
+                    target="__blank"
+                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                   >
-                    {item.title}
+                    Try now →
                   </CardItem>
                   <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                    translateZ={20}
+                    as={Link}
+                    href={item.repo}
+                    target="__blank"
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                   >
-                    Tech Stack:&nbsp;{item.skills}
+                    GitHub
                   </CardItem>
-                  <CardItem translateZ="100" className="w-full mt-4">
-                    <Image
-                      src={item.img.url}
-                      height="1000"
-                      width="1000"
-                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                      alt="thumbnail"
-                      priority
-                    />
-                  </CardItem>
-                  <div className="flex justify-between items-center mt-5">
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href={item.link}
-                      target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                    >
-                      Try now →
-                    </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as={Link}
-                      href={item.repo}
-                      target="__blank"
-                      className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                    >
-                      GitHub
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-            );
-          })}
-        </div>
-      ) : (
-        <p className="text-canter my-20">{message}</p>
-      )}
+                </div>
+              </CardBody>
+            </CardContainer>
+          );
+        })}
+      </div>
     </motion.div>
   );
 }

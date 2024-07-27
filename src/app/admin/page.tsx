@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <div className="w-full flex items-center justify-center">Welcome to Admin Dashboard</div>;
+};
 
-export default page
+export default page;

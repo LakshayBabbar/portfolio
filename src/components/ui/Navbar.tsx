@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import img from "../../../public/Logo.png";
-import Socials from "./Socials";
+import dynamic from "next/dynamic";
+const Socials = dynamic(() => import("./Socials"));
 import { RiMenu4Fill } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
@@ -66,10 +67,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className={linkStyle}>
-              <Link
-                href="https://blog-tech-delta.vercel.app/users/lakshaybabbar0118"
-                target="_blank"
-              >
+              <Link href="https://legit-blogs.vercel.app" target="_blank">
                 <span className={linkSpan}>
                   <PiPenNibStraight />
                   Blog

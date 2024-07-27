@@ -43,7 +43,7 @@ const Skills = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="my-10 w-11/12 space-y-10">
+    <div className="my-10 sm:w-11/12 space-y-10 px-5 sm:px-0">
       {data?.skills?.map((skill: Skill) => {
         return (
           <SkillCard
@@ -61,12 +61,7 @@ const Skills = () => {
       >
         + Add New
       </Button>
-      {isOpen && (
-        <AddSkill
-          isOpen={modalHandler}
-          fetchData={fetchData}
-        />
-      )}
+      {isOpen && <AddSkill isOpen={modalHandler} fetchData={fetchData} />}
     </div>
   );
 };

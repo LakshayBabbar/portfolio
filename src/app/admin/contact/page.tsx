@@ -32,7 +32,7 @@ const Contact = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="my-10 flex w-11/12 justify-center sm:justify-start flex-wrap gap-6">
+    <div className="my-10 flex w-full sm:w-11/12 justify-center sm:justify-start flex-wrap gap-6">
       {data?.contacts?.map((item: Contact) => {
         return (
           <ContactCard key={item._id} data={item} deleteHandler={handler} />

@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row items-center">
       <div className="space-y-4">
         <div className="w-full md:w-[fit-content] flex justify-center md:justify-normal">
           <Button
