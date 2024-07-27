@@ -30,7 +30,11 @@ const SkillCard: React.FC<SkillCardProps> = ({ data, skillhandler }) => {
       <div className="flex gap-4">
         <Button
           onClick={() =>
-            skillhandler("UPDATE", data._id, { _id: data._id, skills, domain })
+            skillhandler("UPDATE", data._id, {
+              _id: data._id,
+              skills: skills.split(","),
+              domain,
+            })
           }
         >
           Update
