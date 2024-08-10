@@ -1,10 +1,11 @@
 import SkillCard from "@/components/ui/SkillUICard";
 import Image from "next/image";
 import img from "../../../public/pic2.jpg";
-import GitHubCalendar from "react-github-calendar";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 import { Skill } from "@/types/types";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 const getData = async () => {
   const req = await fetch(process.env.BASE_URL + "/api/skills", {
@@ -19,7 +20,7 @@ const getData = async () => {
 const About = async () => {
   const data = await getData();
   return (
-    <section className="flex flex-col items-center justify-center gap-10 dark:bg-dot-white/[0.16]">
+    <section className="flex flex-col items-center justify-center gap-10  ">
       <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 my-20 md:my-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">
@@ -69,20 +70,11 @@ const About = async () => {
             </p>
           )}
         </div>
-        <div className="space-y-10 w-[85vw] md:w-[70vw]">
-          <h2 className="text-4xl font-bold my-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
-            Days I Code
-          </h2>
-          <GitHubCalendar
-            username="lakshaybabbar"
-            theme={{
-              dark: ["rgb(38, 38, 38)", "rgb(156,163,175)"],
-            }}
-            blockMargin={5}
-            fontSize={16}
-          />
-        </div>
       </div>
+      <div className="fixed -top-10 -left-10 -z-20 w-[80%] h-[18%] bg-gradient-to-r from-indigo-800 to-purple-900  blur-[150px] rounded-lg -rotate-12" />
+      <div className="fixed top-0 z-50 w-[100%] h-screen translate-x-[100%] bg-black animate-slide-in-out" />
+      <ShootingStars />
+      <StarsBackground />
     </section>
   );
 };

@@ -9,9 +9,9 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import { GrHomeRounded } from "react-icons/gr";
 import { FaRegUser } from "react-icons/fa";
-import { GoProjectSymlink } from "react-icons/go";
 import { GrLocation } from "react-icons/gr";
 import { PiPenNibStraight } from "react-icons/pi";
+import { Layers } from "lucide-react";
 
 const Navbar = () => {
   const pre = "-top-96 right-0";
@@ -53,7 +53,7 @@ const Navbar = () => {
             <li className={linkStyle} onClick={menuHandler}>
               <Link href="/projects">
                 <span className={linkSpan}>
-                  <GoProjectSymlink />
+                  <Layers className="size-5" />
                   Projects
                 </span>
               </Link>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
@@ -18,7 +18,7 @@ export default function Projects() {
 
   if (loading)
     return (
-      <p className="mt-32 flex items-center justify-center">
+      <p className="h-screen flex items-center justify-center">
         <div className="size-16 rounded-full border-t-4 border-blue-500 animate-spin" />
       </p>
     );
@@ -26,7 +26,7 @@ export default function Projects() {
 
   return (
     <motion.div
-      className="h-[fit-content] relative w-full bg-grid-white/[0.07] flex flex-col items-center overflow-hidden rounded-md"
+      className="h-[fit-content] relative w-full flex flex-col items-center overflow-hidden rounded-md bg-dot-slate-100/[0.3]"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ type: "spring" }}

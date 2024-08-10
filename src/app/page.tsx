@@ -18,7 +18,7 @@ export default function Home() {
             Hi I&#39;am Lakshay Babbar
           </h1>
           <p className="mt-10 font-normal text-base md:text-xl text-neutral-400 max-w-72 md:max-w-3xl text-center mx-auto">
-            I am a Second year computer application undergrad. I have a good
+            I am a third year computer application undergrad. I have a good
             hand at FrontEnd. I am a enthusiastic and quick learner who is
             always looking for opportunities to upgrade my skills. Apart from
             this I am good at Linux.
