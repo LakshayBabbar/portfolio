@@ -1,6 +1,6 @@
 import SkillCard from "@/components/ui/SkillUICard";
 import Image from "next/image";
-import img from "../../../public/pic2.jpg";
+import img from "../../../public/pic.webp";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 import { Skill } from "@/types/types";
@@ -21,21 +21,21 @@ const About = async () => {
   const data = await getData();
   return (
     <section className="flex flex-col items-center justify-center gap-10  ">
-      <div className="md:w-[90%] xl:w-[70%] px-4 md:px-0 my-20 md:my-32">
+      <div className="md:w-[90%] xl:w-[75rem] px-4 md:px-0 my-24 md:my-32">
         <div className="flex md:justify-between">
           <div className="space-y-10">
-            <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
               Know Who I&apos;M
             </h1>
             <div className="space-y-4">
               <p className="md:max-w-xl xl:max-w-2xl text-neutral-200 md:pr-4">
-                Welcome to my portfolio! I am a passionate MERN Stack developer
-                on a journey towards becoming a proficient full-stack developer.
-                Currently pursuing my BCA degree from SGTBIMIT, I am deeply
-                engrossed in crafting modern UI applications using cutting-edge
-                frameworks like React. My portfolio showcases a collection of
-                projects that demonstrate my skills and dedication to creating
-                innovative solutions. Feel free to explore my projects.
+                Welcome to my portfolio! I&apos;m Lakshay Babbar, a dedicated
+                MERN stack developer with a strong foundation in building
+                dynamic web applications. Currently, I&apos;m expanding my
+                expertise in Cloud Computing and DevOps, aiming to create
+                scalable and efficient solutions. Explore my projects to see how
+                I blend creativity with technical skills to deliver impactful
+                results.
               </p>
               <HoverBorderGradient
                 containerClassName="rounded-xl"
@@ -50,7 +50,7 @@ const About = async () => {
             <Image
               src={img}
               alt="Profile pic"
-              className="size-80 rounded-md grayscale object-cover"
+              className="size-80 rounded-md mix-blend-luminosity object-cover"
             />
           </figure>
         </div>
@@ -59,7 +59,7 @@ const About = async () => {
             What I Know
           </h2>
           {data.skills ? (
-            <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
               {data.skills.map((item: Skill) => {
                 return <SkillCard key={item._id} data={item} />;
               })}

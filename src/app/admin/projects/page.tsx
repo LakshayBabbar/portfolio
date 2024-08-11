@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
     fetchData("/api/projects", "GET");
   }, [fetchData]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p>{error}</p>;
 
   const handlerProject = async (type: string, id: string, body: {}) => {

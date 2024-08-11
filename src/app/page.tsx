@@ -13,15 +13,14 @@ export default function Home() {
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
-        <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-28 md:pt-0 flex flex-col items-center">
+        <div className="p-4 max-w-7xl  mx-auto relative z-10  w-full pt-40 md:pt-0 flex flex-col items-center">
           <h1 className="text-6xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 max-w-72 md:max-w-none leading-tight">
-            Hi I&#39;am Lakshay Babbar
+            Hi I&#39;m Lakshay Babbar
           </h1>
           <p className="mt-10 font-normal text-base md:text-xl text-neutral-400 max-w-72 md:max-w-3xl text-center mx-auto">
-            I am a third year computer application undergrad. I have a good
-            hand at FrontEnd. I am a enthusiastic and quick learner who is
-            always looking for opportunities to upgrade my skills. Apart from
-            this I am good at Linux.
+            A MERN stack developer and a third-year Computer
+            Applications student passionate about mastering Cloud Computing and
+            DevOps.
           </p>
           <div className="mt-10 flex gap-4 items-center">
             <Button asChild className="py-2 px-5">

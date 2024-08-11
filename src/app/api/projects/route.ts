@@ -6,7 +6,7 @@ connectDb();
 
 export async function GET() {
   try {
-    const projects = await Project.find({}).lean();
+    const projects = await Project.find({}).sort({ updatedAt: -1 }).lean();
     return NextResponse.json(
       {
         projects,

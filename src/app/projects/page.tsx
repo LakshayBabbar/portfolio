@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "@/types/types";
 import useFetch from "@/hooks/useFetch";
+import Loading from "@/components/ui/Loading";
 
 export default function Projects() {
   const { data, fetchData, loading, error } = useFetch<{
@@ -19,14 +20,14 @@ export default function Projects() {
   if (loading)
     return (
       <p className="h-screen flex items-center justify-center">
-        <div className="size-16 rounded-full border-t-4 border-blue-500 animate-spin" />
+        <Loading />
       </p>
     );
   if (error) return <p className="mt-32 text-center">Error: {error}</p>;
 
   return (
     <motion.div
-      className="h-[fit-content] relative w-full flex flex-col items-center overflow-hidden rounded-md bg-dot-slate-100/[0.3]"
+      className="h-[fit-content] relative w-full flex flex-col items-center overflow-hidden rounded-md bg-dot-slate-100/[0.24]"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ type: "spring" }}
@@ -43,7 +44,7 @@ export default function Projects() {
         {data?.projects?.map((item: Project) => {
           return (
             <CardContainer className="inter-var" key={item._id}>
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto xl:h-[28rem] rounded-xl p-6 border  ">
                 <CardItem
                   translateZ="50"
                   className="text-xl font-bold text-neutral-600 dark:text-white"
