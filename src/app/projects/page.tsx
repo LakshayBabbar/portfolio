@@ -19,7 +19,7 @@ export default function Projects() {
 
   if (loading)
     return (
-      <p className="h-screen flex items-center justify-center">
+      <p className="h-screen w-full flex items-center justify-center">
         <Loading />
       </p>
     );

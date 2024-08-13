@@ -6,6 +6,7 @@ import Socials from "@/components/ui/Socials";
 import { motion } from "framer-motion";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -63,10 +64,13 @@ const Contact = () => {
           <h1 className="text-5xl sm:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
             Get In Touch
           </h1>
-          <p className="flex items-center">
+          <Link
+            href="mailto:lakshay.babbar.1801@gmail.com"
+            className="flex items-center hover:underline hover:underline-offset-4"
+          >
             <MdEmail />
             &nbsp;Lakshay.babbar.1801@gmail.com
-          </p>
+          </Link>
           <p className="flex items-center">
             <IoPhonePortraitOutline />
             &nbsp;9953712825
