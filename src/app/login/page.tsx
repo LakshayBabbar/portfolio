@@ -2,8 +2,8 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -13,6 +13,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [errorMssg, setErrorMssg] = useState<string | null>(null);
   const router = useRouter();
+
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -26,11 +27,11 @@ const Login = () => {
         body: JSON.stringify(data),
       });
       const res = await req.json();
-      if (!req.ok || !res.error) {
-        throw new Error(res.message);
-      }
       if (res.error) {
-        throw new Error(res.message);
+        throw new Error(res.error);
+      }
+      if (!req.ok) {
+        throw new Error("Something went wrong");
       }
       router.push("/admin/skills");
     } catch (error) {

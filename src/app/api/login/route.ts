@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json(
         {
-          message: "User not found",
+          error: "User not found",
           success: false,
         },
         { status: 404 }
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     if (!isValid) {
       return NextResponse.json(
         {
-          message: "Invalid Credentials",
+          error: "Invalid Credentials",
           success: false,
         },
         { status: 401 }
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     return NextResponse.json(
       {
-        message: error.message,
+        error: error.message,
         success: false,
       },
       { status: 500 }
