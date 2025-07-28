@@ -1,14 +1,14 @@
 "use client";
 import Socials from "./Socials";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { GoArrowUpRight } from "react-icons/go";
 import { HoverBorderGradient } from "./hover-border-gradient";
 
 const Footer = () => {
   return (
     <motion.section
-      className="flex flex-col items-center gap-8 my-6 px-5 sm:px-20"
+      className="flex flex-col items-center gap-8 py-6 px-5 sm:px-20 bg-black"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200 }}

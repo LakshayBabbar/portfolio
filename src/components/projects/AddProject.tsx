@@ -68,7 +68,7 @@ const AddProject: React.FC<{
 
   return (
     <div className="z-50 w-full h-screen fixed top-0 left-0 backdrop-blur-xl flex justify-center items-center">
-      <div className="w-11/12 sm:w-[30rem] rounded-xl border p-10 bg-black">
+      <div className="w-11/12 sm:w-120 rounded-xl border p-10 bg-black">
         <form onSubmit={submitHandler} className="space-y-4">
           <h1 className="text-xl font-bold">New Project</h1>
           <Input
@@ -105,7 +105,7 @@ const AddProject: React.FC<{
           />
           <label
             htmlFor="input-file"
-            className="border border-input bg-background hover:bg-accent hover:text-accent-foreground gap-2 flex-grow h-10 px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            className="border border-input bg-background hover:bg-accent hover:text-accent-foreground gap-2 grow h-10 px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
           >
             Upload File
           </label>

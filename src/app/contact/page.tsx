@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MdEmail } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import Socials from "@/components/ui/Socials";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
@@ -59,9 +59,9 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ type: "spring" }}
     >
-      <section className="px-5 w-full sm:w-4/5 md:w-[45rem]">
+      <section className="px-5 w-full sm:w-4/5 md:w-180">
         <div className="relative flex flex-col gap-2 items-center mb-10">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-2 bg-clip-text text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
             Get In Touch
           </h1>
           <Link
@@ -83,7 +83,7 @@ const Contact = () => {
           <input
             type="text"
             required
-            className="bg-transparent border-b border-white h-10 px-4 outline-none w-full"
+            className="bg-transparent border-b border-white h-10 px-4 outline-hidden w-full"
             placeholder="Name"
             name="name"
             value={data.name}
@@ -94,12 +94,12 @@ const Contact = () => {
             required
             name="email"
             value={data.email}
-            className="bg-transparent border-b border-white h-10 px-4 outline-none w-full"
+            className="bg-transparent border-b border-white h-10 px-4 outline-hidden w-full"
             placeholder="Email"
             onChange={valueHandler}
           />
           <textarea
-            className="h-28 max-h-60 bg-transparent border-b border-white px-4 outline-none w-full"
+            className="h-28 max-h-60 bg-transparent border-b border-white px-4 outline-hidden w-full"
             placeholder="Message"
             value={data.message}
             name="message"

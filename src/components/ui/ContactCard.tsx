@@ -7,7 +7,7 @@ const ContactCard: React.FC<{
   deleteHandler: (id: string) => void;
 }> = ({ data, deleteHandler }) => {
   return (
-    <div className="w-11/12 md:w-[25rem] border p-10 rounded-xl space-y-2 bg-black">
+    <div className="w-11/12 md:w-100 border p-10 rounded-xl space-y-2 bg-black">
       <p>
         <span className="font-bold">Name:</span> {data.name}
       </p>

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Project } from "@/types/types";
 import useFetch from "@/hooks/useFetch";
 import Loading from "@/components/ui/Loading";
@@ -27,13 +27,13 @@ export default function Projects() {
 
   return (
     <motion.div
-      className="h-[fit-content] relative w-full flex flex-col items-center overflow-hidden rounded-md bg-dot-slate-100/[0.24]"
+      className="h-fit relative w-full flex flex-col items-center overflow-hidden rounded-md bg-dot-slate-100/[0.24]"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ type: "spring" }}
     >
       <div className="px-5 sm:px-0 mt-28 sm:mt-36 w-auto space-y-5">
-        <h1 className="text-5xl md:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
+        <h1 className="text-5xl md:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-linear-to-b from-neutral-50 to-neutral-400 bg-opacity-50 leading-tight">
           My Recent Works
         </h1>
         <p className="text-neutral-300">
@@ -44,7 +44,7 @@ export default function Projects() {
         {data?.projects?.map((item: Project) => {
           return (
             <CardContainer className="inter-var" key={item._id}>
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-[30rem] h-auto xl:h-[28rem] rounded-xl p-6 border  ">
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/10 dark:bg-black dark:border-white/20 border-black/10 w-[90vw] sm:w-[70vw] md:w-[45vw] xl:w-120 h-auto xl:h-112 rounded-xl p-6 border  ">
                 <CardItem
                   translateZ="50"
                   className="text-xl font-bold text-neutral-600 dark:text-white"

@@ -62,7 +62,7 @@ const AddSkill: React.FC<{
 
   return (
     <div className="z-50 w-full h-screen fixed top-0 left-0 backdrop-blur-xl flex justify-center items-center">
-      <div className="w-11/12 sm:w-[30rem] rounded-xl border p-10 bg-black">
+      <div className="w-11/12 sm:w-120 rounded-xl border p-10 bg-black">
         <form onSubmit={submitHandler} className="space-y-4">
           <h1 className="text-xl font-bold">New Skill</h1>
           <Input
